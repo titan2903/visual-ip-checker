@@ -1,0 +1,158 @@
+[
+  {
+    "id": 0,
+    "filename": "anyaman_rotan_lombok_06.jpg",
+    "title": "Anyaman Rotan Motif Selisih",
+    "category": "anyaman",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/anyaman_rotan_lombok_06.jpg",
+      "width": 400,
+      "height": 400,
+      "description": "Pola silang anyaman rotan natural khas Lombok",
+      "source": "dummy_dataset_curated"
+    }
+  },
+  {
+    "id": 1,
+    "filename": "batik_kawung_02.jpg",
+    "title": "Batik Kawung Empat Pola",
+    "category": "batik",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/batik_kawung_02.jpg",
+      "width": 400,
+      "height": 400,
+      "description": "Motif elips empat arah beraturan buah kawung/kolang-kaling",
+      "source": "dummy_dataset_curated"
+    }
+  },
+  {
+    "id": 2,
+    "filename": "batik_megamendung_05.jpg",
+    "title": "Batik Megamendung Cirebon",
+    "category": "batik",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/batik_megamendung_05.jpg",
+      "width": 400,
+      "height": 400,
+      "description": "Pola awan megamendung khas pesisir Cirebon gradasi biru",
+      "source": "dummy_dataset_curated"
+    }
+  },
+  {
+    "id": 3,
+    "filename": "batik_parang_01.jpg",
+    "title": "Batik Parang Rusak Klasik",
+    "category": "batik",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/batik_parang_01.jpg",
+      "width": 400,
+      "height": 400,
+      "description": "Motif parang diagonal soga cokelat tradisional Surakarta",
+      "source": "dummy_dataset_curated"
+    }
+  },
+  {
+    "id": 4,
+    "filename": "batik_truntum_solo_10.jpg",
+    "title": "Batik Truntum Bintang Melati",
+    "category": "batik",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/batik_truntum_solo_10.jpg",
+      "width": 400,
+      "height": 400,
+      "description": "Motif truntum bunga melati bintang kecil berulang",
+      "source": "dummy_dataset_curated"
+    }
+  },
+  {
+    "id": 5,
+    "filename": "kain_lurik_yogyakarta_09.jpg",
+    "title": "Kain Lurik Garis Klasik",
+    "category": "tenun",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/kain_lurik_yogyakarta_09.jpg",
+      "width": 400,
+      "height": 400,
+      "description": "Garis vertikal rapat tradisional Yogyakarta",
+      "source": "dummy_dataset_curated"
+    }
+  },
+  {
+    "id": 6,
+    "filename": "outer_tenun_modern_11.jpg",
+    "title": "Outer Etnik Geometris Modern",
+    "category": "fashion",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/outer_tenun_modern_11.jpg",
+      "width": 400,
+      "height": 400,
+      "description": "Desain blazer tenun asimetris color block kontemporer",
+      "source": "dummy_dataset_curated"
+    }
+  },
+  {
+    "id": 7,
+    "filename": "selendang_batik_pekalongan_12.jpg",
+    "title": "Selendang Batik Buketan Pekalongan",
+    "category": "batik",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/selendang_batik_pekalongan_12.jpg",
+      "width": 400,
+      "height": 400,
+      "description": "Motif buketan bunga pesisiran cerah khas Pekalongan",
+      "source": "dummy_dataset_curated"
+    }
+  },
+  {
+    "id": 8,
+    "filename": "tas_kulit_tatah_08.jpg",
+    "title": "Tas Kulit Tatah Manding",
+    "category": "fashion",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/tas_kulit_tatah_08.jpg",
+      "width": 400,
+      "height": 400,
+      "description": "Pola cap tatah etnik geometris pada kulit nabati",
+      "source": "dummy_dataset_curated"
+    }
+  },
+  {
+    "id": 9,
+    "filename": "tenun_ikat_sumba_03.jpg",
+    "title": "Tenun Ikat Sumba Timur",
+    "category": "tenun",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/tenun_ikat_sumba_03.jpg",
+      "width": 400,
+      "height": 400,
+      "description": "Pola pita geometris tenun ikat pewarna alam indigo dan terakota",
+      "source": "dummy_dataset_curated"
+    }
+  },
+  {
+    "id": 10,
+    "filename": "tenun_songket_palembang_04.jpg",
+    "title": "Tenun Songket Lepus Emas",
+    "category": "tenun",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/tenun_songket_palembang_04.jpg",
+      "width": 400,
+      "height": 400,
+      "description": "Songket tenun benang emas khas Palembang berlatar marun",
+      "source": "dummy_dataset_curated"
+    }
+  },
+  {
+    "id": 11,
+    "filename": "ukiran_kayu_jepara_07.jpg",
+    "title": "Relief Ukiran Kayu Jepara",
+    "category": "kerajinan",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/ukiran_kayu_jepara_07.jpg",
+      "width": 400,
+      "height": 400,
+      "description": "Motif sulur daun dan bunga ukiran kayu jati Jepara",
+      "source": "dummy_dataset_curated"
+    }
+  }
+]

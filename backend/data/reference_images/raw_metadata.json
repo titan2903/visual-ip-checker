@@ -1,0 +1,86 @@
+[
+  {
+    "filename": "batik_parang_01.jpg",
+    "title": "Batik Parang Rusak Klasik",
+    "category": "batik",
+    "description": "Motif parang diagonal soga cokelat tradisional Surakarta",
+    "source": "dummy_dataset_curated"
+  },
+  {
+    "filename": "batik_kawung_02.jpg",
+    "title": "Batik Kawung Empat Pola",
+    "category": "batik",
+    "description": "Motif elips empat arah beraturan buah kawung/kolang-kaling",
+    "source": "dummy_dataset_curated"
+  },
+  {
+    "filename": "tenun_ikat_sumba_03.jpg",
+    "title": "Tenun Ikat Sumba Timur",
+    "category": "tenun",
+    "description": "Pola pita geometris tenun ikat pewarna alam indigo dan terakota",
+    "source": "dummy_dataset_curated"
+  },
+  {
+    "filename": "tenun_songket_palembang_04.jpg",
+    "title": "Tenun Songket Lepus Emas",
+    "category": "tenun",
+    "description": "Songket tenun benang emas khas Palembang berlatar marun",
+    "source": "dummy_dataset_curated"
+  },
+  {
+    "filename": "batik_megamendung_05.jpg",
+    "title": "Batik Megamendung Cirebon",
+    "category": "batik",
+    "description": "Pola awan megamendung khas pesisir Cirebon gradasi biru",
+    "source": "dummy_dataset_curated"
+  },
+  {
+    "filename": "anyaman_rotan_lombok_06.jpg",
+    "title": "Anyaman Rotan Motif Selisih",
+    "category": "anyaman",
+    "description": "Pola silang anyaman rotan natural khas Lombok",
+    "source": "dummy_dataset_curated"
+  },
+  {
+    "filename": "ukiran_kayu_jepara_07.jpg",
+    "title": "Relief Ukiran Kayu Jepara",
+    "category": "kerajinan",
+    "description": "Motif sulur daun dan bunga ukiran kayu jati Jepara",
+    "source": "dummy_dataset_curated"
+  },
+  {
+    "filename": "tas_kulit_tatah_08.jpg",
+    "title": "Tas Kulit Tatah Manding",
+    "category": "fashion",
+    "description": "Pola cap tatah etnik geometris pada kulit nabati",
+    "source": "dummy_dataset_curated"
+  },
+  {
+    "filename": "kain_lurik_yogyakarta_09.jpg",
+    "title": "Kain Lurik Garis Klasik",
+    "category": "tenun",
+    "description": "Garis vertikal rapat tradisional Yogyakarta",
+    "source": "dummy_dataset_curated"
+  },
+  {
+    "filename": "batik_truntum_solo_10.jpg",
+    "title": "Batik Truntum Bintang Melati",
+    "category": "batik",
+    "description": "Motif truntum bunga melati bintang kecil berulang",
+    "source": "dummy_dataset_curated"
+  },
+  {
+    "filename": "outer_tenun_modern_11.jpg",
+    "title": "Outer Etnik Geometris Modern",
+    "category": "fashion",
+    "description": "Desain blazer tenun asimetris color block kontemporer",
+    "source": "dummy_dataset_curated"
+  },
+  {
+    "filename": "selendang_batik_pekalongan_12.jpg",
+    "title": "Selendang Batik Buketan Pekalongan",
+    "category": "batik",
+    "description": "Motif buketan bunga pesisiran cerah khas Pekalongan",
+    "source": "dummy_dataset_curated"
+  }
+]

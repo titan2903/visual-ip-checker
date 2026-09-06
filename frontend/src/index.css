@@ -1,0 +1,112 @@
+/* ==========================================================================
+   TARUM DESIGN SYSTEM TOKENS (PRD Section 8.1)
+   Color Palette: Paper, Ink, Indigo Tarum, Line Grey, Signal Amber
+   Typography: Inter Tight (UI) & IBM Plex Mono (Data/Score)
+   ========================================================================== */
+
+:root {
+  /* 5 Named Base Colors */
+  --color-paper: #F7F6F3;
+  --color-ink: #1A1A18;
+  --color-indigo: #2B3A67;
+  --color-line: #D8D5CE;
+  --color-amber: #B8843A;
+
+  /* Secondary Tints for Structure (Derived, not saturated) */
+  --color-ink-secondary: #4E4C47;
+  --color-ink-muted: #7D7A73;
+  --color-paper-subtle: #F0EDE6;
+  --color-paper-contrast: #FFFFFF;
+  --color-line-darker: #BEBAB0;
+
+  /* Typography */
+  --font-ui: 'Inter Tight', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  /* Layout Spacing */
+  --space-2: 2px;
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-64: 64px;
+}
+
+/* Reset & Base Elements */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  min-height: 100%;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-ui);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle Woven / Textile Grid Texture on Blank Canvas */
+body {
+  background-image:
+    repeating-linear-gradient(0deg, rgba(216, 213, 206, 0.35) 0px, rgba(216, 213, 206, 0.35) 1px, transparent 1px, transparent 24px),
+    repeating-linear-gradient(90deg, rgba(216, 213, 206, 0.35) 0px, rgba(216, 213, 206, 0.35) 1px, transparent 1px, transparent 24px);
+  background-attachment: fixed;
+}
+
+/* Base Headings - Strict: No uppercase transforms, natural hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  color: var(--color-ink);
+  letter-spacing: -0.02em;
+  text-transform: none; /* No generic AI ALL-CAPS */
+}
+
+p, span, label, div {
+  text-transform: none;
+}
+
+a {
+  color: var(--color-indigo);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.15s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+button {
+  font-family: var(--font-ui);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input, select, textarea {
+  font-family: var(--font-ui);
+  color: var(--color-ink);
+}
+
+/* Scrollbar Styling - Clean & Minimal */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-paper);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-line-darker);
+}
