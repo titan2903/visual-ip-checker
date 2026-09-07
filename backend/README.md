@@ -60,22 +60,37 @@ uv pip install -r backend/requirements.txt
 
 ### 3. Persiapan Dataset & Pembangunan Indeks
 
-#### Langkah A: Siapkan Gambar Referensi
-Jika belum ada gambar asli, jalankan script untuk membuat 12 motif dummy sintetis:
-```bash
-python backend/scripts/create_dummy_data.py
-```
-> Gambar akan disimpan ke `backend/data/reference_images/` lengkap dengan `raw_metadata.json`. Anda dapat menambahkan foto desain asli Anda langsung ke folder tersebut.
+Tarum mengadopsi dataset referensi resmi Hugging Face [`muhammadsalmanalfaridzi/Batik-Indonesia`](https://huggingface.co/datasets/muhammadsalmanalfaridzi/Batik-Indonesia) yang memuat **2.599 gambar** dalam format `imagefolder` mencakup **38 kelas motif batik nusantara** (Aceh, Bali, Megamendung, Parang, Kawung, Asmat, dll.).
 
-#### Langkah B: Bangun Indeks FAISS
+#### Pilihan A: Mengindeks Dataset Hugging Face (Rekomendasi MVP)
 ```bash
-python backend/scripts/build_index.py
+# Mengindeks dataset Hugging Face Batik Indonesia (otomatis unduh & simpan thumbnail)
+python backend/scripts/build_index.py --source hf
+
+# Opsi: batasi jumlah gambar untuk pengujian cepat (misal 300 gambar)
+python backend/scripts/build_index.py --source hf --limit 300
 ```
-Opsi CLI tambahan:
-- `--data-dir <path>`: Folder gambar referensi (default: `backend/data/reference_images`)
+
+#### Pilihan B: Fallback Dataset Lokal / Sintetis
+```bash
+# 1. Buat 12 motif sintetis (jika ingin mencoba offline)
+python backend/scripts/create_dummy_data.py
+
+# 2. Bangun indeks dari folder lokal backend/data/reference_images/
+python backend/scripts/build_index.py --source local
+```
+
+#### Opsi Parameter CLI `build_index.py`:
+- `--source [hf|local]`: Sumber dataset (`hf` untuk Hugging Face, `local` untuk folder lokal). Default: `hf`
+- `--dataset-name <str>`: Nama dataset Hugging Face (default: `muhammadsalmanalfaridzi/Batik-Indonesia`)
+- `--limit <int>`: Batas maksimal gambar yang diindeks (opsional, default: seluruh data)
+- `--data-dir <path>`: Folder penyimpan thumbnail gambar referensi (default: `backend/data/reference_images`)
 - `--output-dir <path>`: Folder output indeks (default: `backend/data/index`)
-- `--metric [ip|l2]`: Metrik FAISS (`ip` untuk Cosine Similarity, `l2` untuk Euclidean Distance)
+- `--metric [ip|l2]`: Metrik pencarian FAISS (`ip` untuk Cosine Similarity, `l2` untuk Euclidean Distance)
 - `--batch-size <int>`: Ukuran batch inferensi CLIP (default: 32)
+
+> ⚠️ **Catatan Provenance & Lisensi (PRD Section 7.1):**
+> Dataset batik publik ini digunakan secara eksplisit sebagai *"dataset riset non-komersial untuk proof-of-concept (MVP)"*. Pada roadmap V1 pasca-hackathon, indeks akan diperluas melalui kemitraan data opt-in pengrajin UMKM, digitalisasi koleksi domain publik museum tekstil, dan pangkalan data PDKI resmi.
 
 ### 4. Menjalankan Server FastAPI
 Dari direktori root:

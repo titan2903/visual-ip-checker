@@ -34,3 +34,6 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Reference dataset downloads
+data/reference_images/hf_batik_*

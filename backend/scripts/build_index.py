@@ -20,6 +20,7 @@ from backend.app.config import (
     FAISS_INDEX_PATH,
     METADATA_PATH,
     MODEL_NAME,
+    HF_DATASET_NAME,
     ALLOWED_EXTENSIONS,
 )
 from backend.app.services.embedding_service import EmbeddingService
@@ -44,24 +45,105 @@ def load_raw_metadata(images_dir: Path) -> dict:
     return {}
 
 
-def build_faiss_index(
-    data_dir: Path = REFERENCE_IMAGES_DIR,
-    output_dir: Path = INDEX_DIR,
-    metric: str = "ip",
-    batch_size: int = 32,
+def load_images_from_hf(
+    dataset_name: str = HF_DATASET_NAME,
+    output_images_dir: Path = REFERENCE_IMAGES_DIR,
+    limit: int = None,
+    split: str = "train",
 ):
     """
-    Scans data_dir for reference images, extracts visual embeddings with CLIP,
-    and builds a FAISS vector index with metadata mapping.
+    Loads dataset from Hugging Face (PRD Section 7 & 7.1),
+    resizes/saves thumbnails locally for static web serving,
+    and prepares image objects & metadata for embedding.
+    """
+    from datasets import load_dataset
+
+    logger.info(f"Loading Hugging Face dataset '{dataset_name}' (split='{split}')...")
+    ds = load_dataset(dataset_name, split=split)
+    total_in_split = len(ds)
+    logger.info(f"Dataset loaded. Total available samples: {total_in_split}")
+
+    # Resolve class labels
+    class_names = []
+    if hasattr(ds.features.get("label"), "names"):
+        class_names = ds.features["label"].names
+
+    max_samples = min(limit, total_in_split) if limit else total_in_split
+    logger.info(f"Processing {max_samples} samples from Hugging Face dataset...")
+
+    output_images_dir.mkdir(parents=True, exist_ok=True)
+    loaded_images = []
+    valid_records = []
+
+    for idx in range(max_samples):
+        try:
+            row = ds[idx]
+            raw_img = row["image"]
+            label_val = row.get("label")
+
+            # Resolve label name
+            if isinstance(label_val, int) and label_val < len(class_names):
+                label_name = class_names[label_val]
+            else:
+                label_name = str(label_val or "batik")
+
+            clean_label = label_name.replace("_", " ").title()
+            slug = label_name.lower().replace(" ", "_")
+
+            # Convert to RGB PIL Image
+            rgb_img = raw_img.convert("RGB")
+            
+            # Save web-friendly thumbnail for static file serving
+            filename = f"hf_batik_{idx:04d}_{slug}.jpg"
+            img_file_path = output_images_dir / filename
+
+            # Only save to disk if not already existing
+            if not img_file_path.exists():
+                thumb_img = rgb_img.copy()
+                thumb_img.thumbnail((512, 512), Image.Resampling.LANCZOS)
+                thumb_img.save(img_file_path, format="JPEG", quality=85, optimize=True)
+
+            loaded_images.append(rgb_img)
+            valid_records.append(
+                {
+                    "id": idx,
+                    "filename": filename,
+                    "title": f"Batik {clean_label} #{idx+1}",
+                    "category": "batik",
+                    "label": label_name,
+                    "metadata": {
+                        "path": str(img_file_path),
+                        "width": rgb_img.width,
+                        "height": rgb_img.height,
+                        "motif": clean_label,
+                        "source": dataset_name,
+                        "split": split,
+                        "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+                        "description": (
+                            f"Motif batik tradisional {clean_label} dari koleksi dataset Batik Indonesia."
+                        ),
+                    },
+                }
+            )
+
+            if (idx + 1) % 100 == 0 or (idx + 1) == max_samples:
+                logger.info(f"Prepared {idx + 1}/{max_samples} images...")
+
+        except Exception as e:
+            logger.warning(f"Error processing sample index {idx}: {e}")
+
+    return loaded_images, valid_records
+
+
+def load_images_from_local(
+    data_dir: Path = REFERENCE_IMAGES_DIR,
+    limit: int = None,
+):
+    """
+    Loads images from local folder (fallback).
     """
     data_dir = Path(data_dir)
-    output_dir = Path(output_dir)
-    output_dir.mkdir(parents=True, exist_ok=True)
-
-    faiss_out = output_dir / "index.faiss"
-    metadata_out = output_dir / "metadata.json"
-
-    logger.info(f"Scanning images from: {data_dir}")
+    logger.info(f"Scanning local images from: {data_dir}")
     image_paths = sorted(
         [
             p
@@ -73,14 +155,16 @@ def build_faiss_index(
     if not image_paths:
         logger.error(
             f"No valid images found in {data_dir}. "
-            "Please add images or run 'python backend/scripts/create_dummy_data.py' first."
+            "Run with '--source hf' or 'python backend/scripts/create_dummy_data.py' first."
         )
-        return False
+        return [], []
 
-    logger.info(f"Found {len(image_paths)} images to index.")
+    if limit:
+        image_paths = image_paths[:limit]
+
+    logger.info(f"Found {len(image_paths)} local images to index.")
     raw_meta_lookup = load_raw_metadata(data_dir)
 
-    # 1. Load images into memory
     loaded_images = []
     valid_records = []
 
@@ -113,8 +197,43 @@ def build_faiss_index(
         except Exception as e:
             logger.warning(f"Skipping corrupted image {path}: {e}")
 
+    return loaded_images, valid_records
+
+
+def build_faiss_index(
+    source: str = "hf",
+    dataset_name: str = HF_DATASET_NAME,
+    data_dir: Path = REFERENCE_IMAGES_DIR,
+    output_dir: Path = INDEX_DIR,
+    limit: int = None,
+    metric: str = "ip",
+    batch_size: int = 32,
+):
+    """
+    Scans reference images (from Hugging Face or local files),
+    extracts visual embeddings with CLIP ViT-B/32, and builds a FAISS vector index.
+    """
+    output_dir = Path(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    faiss_out = output_dir / "index.faiss"
+    metadata_out = output_dir / "metadata.json"
+
+    # 1. Load Images & Metadata
+    if source == "hf":
+        loaded_images, valid_records = load_images_from_hf(
+            dataset_name=dataset_name,
+            output_images_dir=Path(data_dir),
+            limit=limit,
+        )
+    else:
+        loaded_images, valid_records = load_images_from_local(
+            data_dir=Path(data_dir),
+            limit=limit,
+        )
+
     if not loaded_images:
-        logger.error("No valid images could be loaded.")
+        logger.error("No valid images could be loaded for indexing.")
         return False
 
     # 2. Extract CLIP Embeddings
@@ -136,7 +255,7 @@ def build_faiss_index(
 
     # 3. Create FAISS Index
     # With normalized embeddings:
-    # - IndexFlatIP gives Inner Product = Cosine Similarity
+    # - IndexFlatIP gives Inner Product = Cosine Similarity in [-1, 1]
     # - IndexFlatL2 gives Euclidean distance d^2 = 2 - 2*cos(theta)
     if metric == "ip":
         logger.info("Building FAISS IndexFlatIP (Cosine Similarity)...")
@@ -158,6 +277,7 @@ def build_faiss_index(
 
     print("\n" + "=" * 50)
     print("✓ INDEKS FAISS BERHASIL DIBUAT")
+    print(f"  - Sumber Data           : {source.upper()} ({dataset_name if source == 'hf' else data_dir})")
     print(f"  - Total Gambar Diindeks : {index.ntotal}")
     print(f"  - Dimensi Vektor        : {dim}")
     print(f"  - File Indeks           : {faiss_out}")
@@ -168,19 +288,37 @@ def build_faiss_index(
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="Bangun indeks FAISS dari dataset referensi kriya/fashion Tarum."
+        description="Bangun indeks FAISS dari dataset referensi batik/kriya Tarum."
+    )
+    parser.add_argument(
+        "--source",
+        choices=["hf", "local"],
+        default="hf",
+        help="Sumber dataset: 'hf' (Hugging Face) atau 'local' (folder lokal). Default: hf",
+    )
+    parser.add_argument(
+        "--dataset-name",
+        type=str,
+        default=HF_DATASET_NAME,
+        help=f"Nama dataset Hugging Face (default: {HF_DATASET_NAME})",
     )
     parser.add_argument(
         "--data-dir",
         type=str,
         default=str(REFERENCE_IMAGES_DIR),
-        help=f"Folder berisi gambar referensi (default: {REFERENCE_IMAGES_DIR})",
+        help=f"Folder penyimpan gambar referensi (default: {REFERENCE_IMAGES_DIR})",
     )
     parser.add_argument(
         "--output-dir",
         type=str,
         default=str(INDEX_DIR),
         help=f"Folder output untuk index.faiss & metadata.json (default: {INDEX_DIR})",
+    )
+    parser.add_argument(
+        "--limit",
+        type=int,
+        default=None,
+        help="Batas maksimal jumlah gambar yang diindeks (default: semua)",
     )
     parser.add_argument(
         "--metric",
@@ -197,8 +335,11 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     build_faiss_index(
+        source=args.source,
+        dataset_name=args.dataset_name,
         data_dir=Path(args.data_dir),
         output_dir=Path(args.output_dir),
+        limit=args.limit,
         metric=args.metric,
         batch_size=args.batch_size,
     )

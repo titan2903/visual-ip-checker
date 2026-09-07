@@ -1,6 +1,9 @@
 # Tarum — Visual IP Screening untuk Pelaku Kriya & Fashion
 
-Tarum adalah instrumen screening awal kemiripan visual desain berbasis *deep learning* untuk pelaku UMKM kriya dan fashion (batik, tenun, anyaman, kerajinan kayu, dan kulit). Sistem mendeteksi potensi kemiripan motif secara visual menggunakan model pretrained **CLIP ViT-B/32** dan pencarian vektor berkecepatan tinggi **FAISS** sebelum produk didaftarkan ke HKI (PDKI) atau diproduksi massal.
+**Owner:** TITANIO YUDISTA  
+**Status:** Draft MVP (Submission EKRAF x Google Career Certificates)
+
+Tarum adalah instrumen screening awal kemiripan visual desain berbasis *deep learning* untuk pelaku UMKM kriya dan fashion (fokus MVP: **Batik Indonesia**). Sistem mendeteksi potensi kemiripan motif secara visual menggunakan model pretrained **CLIP ViT-B/32** dan pencarian vektor berkecepatan tinggi **FAISS** sebelum produk didaftarkan ke HKI (PDKI) atau diproduksi massal.
 
 ---
 
@@ -97,15 +100,16 @@ visual-ip-checker/
    # atau: pip install -r backend/requirements.txt
    ```
 
-3. **Buat Gambar Dummy & Bangun Indeks FAISS**:
+3. **Persiapan Dataset & Bangun Indeks FAISS**:
    ```bash
-   # Buat 12 sampel motif dummy (jika belum memiliki dataset motif asli)
-   python backend/scripts/create_dummy_data.py
+   # Rekomendasi MVP: Mengindeks dataset Hugging Face Batik-Indonesia (2.599 gambar, 38 kelas motif)
+   python backend/scripts/build_index.py --source hf
 
-   # Bangun indeks vektor FAISS
-   python backend/scripts/build_index.py
+   # Opsi Fallback: Buat 12 motif sintetis & indeks lokal
+   python backend/scripts/create_dummy_data.py
+   python backend/scripts/build_index.py --source local
    ```
-   *(Anda juga dapat menambahkan gambar motif asli ke dalam folder `backend/data/reference_images/`)*.
+   *(Script otomatis mengunduh, mengekstrak embedding CLIP, menyimpan thumbnail ke `backend/data/reference_images/`, dan membangun `index.faiss`)*.
 
 4. **Jalankan Server FastAPI**:
    ```bash
@@ -141,6 +145,7 @@ Buka terminal baru:
 | Variabel | Default | Keterangan |
 |---|---|---|
 | `TARUM_MODEL_NAME` | `clip-ViT-B-32` | Model CLIP via sentence-transformers |
+| `TARUM_HF_DATASET` | `muhammadsalmanalfaridzi/Batik-Indonesia` | Dataset Hugging Face referensi batik (PRD Section 7.1) |
 | `TARUM_HOST` | `0.0.0.0` | Host binding server FastAPI |
 | `TARUM_PORT` | `8000` | Port listening server |
 | `TARUM_CORS_ORIGINS` | `http://localhost:5173,...` | Daftar origin yang diizinkan CORS |

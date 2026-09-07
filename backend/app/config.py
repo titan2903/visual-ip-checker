@@ -28,6 +28,11 @@ INDEX_DIR.mkdir(parents=True, exist_ok=True)
 MODEL_NAME = os.getenv("TARUM_MODEL_NAME", "clip-ViT-B-32")
 EMBEDDING_DIM = 512
 
+# Hugging Face Dataset (PRD Section 7 & 7.1)
+HF_DATASET_NAME = os.getenv(
+    "TARUM_HF_DATASET", "muhammadsalmanalfaridzi/Batik-Indonesia"
+)
+
 # Server Configuration
 HOST = os.getenv("TARUM_HOST", "0.0.0.0")
 PORT = int(os.getenv("TARUM_PORT", "8000"))

@@ -104,7 +104,10 @@ class SearchService:
             )
 
     def search(
-        self, query_vector: np.ndarray, top_k: int = DEFAULT_TOP_K
+        self,
+        query_vector: np.ndarray,
+        top_k: int = DEFAULT_TOP_K,
+        category: Optional[str] = None,
     ) -> Tuple[List[Dict[str, Any]], float, str, str]:
         """
         Performs vector similarity search against the FAISS index.
@@ -112,6 +115,7 @@ class SearchService:
         Args:
             query_vector: numpy array of shape (1, 512), L2-normalized.
             top_k: Number of nearest neighbors to retrieve.
+            category: Optional category filter (e.g. 'batik', 'tenun', or specific motif)
 
         Returns:
             Tuple of:
@@ -126,20 +130,23 @@ class SearchService:
                 "Silakan jalankan script build_index.py terlebih dahulu."
             )
 
-        k = min(top_k, self.index.ntotal)
-        distances, indices = self.index.search(query_vector.astype(np.float32), k)
+        # Retrieve a broader candidate pool if category filter is active
+        has_filter = bool(category and category.strip() and category.strip().lower() != "semua")
+        k_search = min(self.index.ntotal, max(top_k * 10, 50)) if has_filter else min(top_k, self.index.ntotal)
+
+        distances, indices = self.index.search(query_vector.astype(np.float32), k_search)
 
         raw_distances = distances[0]
         match_indices = indices[0]
 
-        results = []
+        all_candidates = []
         is_ip_metric = (
             self.index.metric_type == faiss.METRIC_INNER_PRODUCT
             if hasattr(self.index, "metric_type")
             else False
         )
 
-        for rank, (dist, idx) in enumerate(zip(raw_distances, match_indices), start=1):
+        for dist, idx in zip(raw_distances, match_indices):
             if idx < 0 or idx >= len(self.metadata):
                 continue
 
@@ -160,9 +167,8 @@ class SearchService:
             item_risk = self.classify_risk(score_rounded)
 
             filename = meta.get("filename", f"item_{idx}.jpg")
-            results.append(
+            all_candidates.append(
                 {
-                    "rank": rank,
                     "id": int(idx),
                     "filename": filename,
                     "image_url": f"/static/reference_images/{filename}",
@@ -173,6 +179,26 @@ class SearchService:
                     "metadata": meta.get("metadata", {}),
                 }
             )
+
+        # Apply category filter if requested
+        if has_filter:
+            cat_lower = category.strip().lower()
+            filtered_candidates = [
+                c for c in all_candidates
+                if cat_lower in c["category"].lower()
+                or cat_lower in c.get("metadata", {}).get("motif", "").lower()
+                or cat_lower in c.get("title", "").lower()
+            ]
+            selected_items = filtered_candidates if filtered_candidates else all_candidates
+        else:
+            selected_items = all_candidates
+
+        # Slice to top_k and re-assign rank numbers
+        results = []
+        for rank, item in enumerate(selected_items[:top_k], start=1):
+            item_with_rank = dict(item)
+            item_with_rank["rank"] = rank
+            results.append(item_with_rank)
 
         max_score = results[0]["similarity_score"] if results else 0.0
         overall_risk = self.classify_risk(max_score)

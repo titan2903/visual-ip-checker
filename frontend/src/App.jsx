@@ -23,22 +23,35 @@ export default function App() {
   
   const fileInputRef = useRef(null)
 
-  // Fetch backend status on mount
+  // Polling status backend secara berkala agar otomatis terhubung saat model selesai dimuat
   useEffect(() => {
-    fetch(`${API_BASE_URL}/api/health`)
-      .then((res) => {
+    let isMounted = true
+
+    const checkHealth = async () => {
+      try {
+        const res = await fetch(`${API_BASE_URL}/api/health`)
         if (!res.ok) throw new Error('Backend offline')
-        return res.json()
-      })
-      .then((data) => {
-        setSystemHealth({
-          online: data.status === 'healthy',
-          totalIndexed: data.total_indexed_images || 12,
-        })
-      })
-      .catch(() => {
-        setSystemHealth({ online: false, totalIndexed: 0 })
-      })
+        const data = await res.json()
+        if (isMounted) {
+          setSystemHealth({
+            online: data.status === 'healthy',
+            totalIndexed: data.total_indexed_images || 200,
+          })
+        }
+      } catch {
+        if (isMounted) {
+          setSystemHealth({ online: false, totalIndexed: 0 })
+        }
+      }
+    }
+
+    checkHealth()
+    const timer = setInterval(checkHealth, 4000)
+
+    return () => {
+      isMounted = false
+      clearInterval(timer)
+    }
   }, [])
 
   // Score Count-Up Animation (PRD Section 8.1 Motion: 0 -> final score)
@@ -144,6 +157,9 @@ export default function App() {
     try {
       const formData = new FormData()
       formData.append('file', selectedFile)
+      if (selectedCategory && selectedCategory !== 'semua') {
+        formData.append('category', selectedCategory)
+      }
 
       const response = await fetch(`${API_BASE_URL}/api/check`, {
         method: 'POST',
@@ -151,6 +167,9 @@ export default function App() {
       })
 
       if (!response.ok) {
+        if (response.status === 502) {
+          throw new Error('Server backend (port 8000) sedang memuat model AI atau belum siap menerima request (HTTP 502 Bad Gateway). Harap tunggu beberapa detik lalu tekan Cek Sekarang kembali.')
+        }
         const errData = await response.json().catch(() => ({}))
         throw new Error(errData.detail || `Terjadi kesalahan pada server (HTTP ${response.status})`)
       }
@@ -193,7 +212,7 @@ export default function App() {
           <span>
             {systemHealth.online
               ? `FAISS: ${systemHealth.totalIndexed} motif diindeks`
-              : 'Backend terputus'}
+              : 'Backend sedang memuat model / terputus'}
           </span>
         </div>
       </header>
@@ -275,12 +294,16 @@ export default function App() {
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
             >
-              <option value="semua">Semua Kategori Kriya</option>
-              <option value="batik">Batik & Motif Tekstil</option>
-              <option value="tenun">Tenun Ikat & Songket</option>
-              <option value="anyaman">Anyaman & Bambu</option>
-              <option value="kerajinan">Kerajinan Kayu & Logam</option>
-              <option value="fashion">Fashion & Kulit</option>
+              <option value="semua">Semua Motif Batik (2.599 Gambar — MVP)</option>
+              <option value="parang">Batik Parang (Yogyakarta & Solo)</option>
+              <option value="kawung">Batik Kawung</option>
+              <option value="megamendung">Batik Megamendung (Cirebon)</option>
+              <option value="bali">Batik Bali (Barong & Merak)</option>
+              <option value="papua">Batik Papua (Asmat & Cendrawasih)</option>
+              <option value="tenun" disabled>Tenun Ikat & Songket (Roadmap V1)</option>
+              <option value="anyaman" disabled>Anyaman Bambu & Rotan (Roadmap V1)</option>
+              <option value="kerajinan" disabled>Kerajinan Kayu & Logam (Roadmap V1)</option>
+              <option value="fashion" disabled>Fashion & Kulit (Roadmap V1)</option>
             </select>
           </div>
 
@@ -374,7 +397,7 @@ export default function App() {
               </div>
               <div className="empty-state-title">Belum ada desain yang diperiksa</div>
               <p className="empty-state-desc">
-                Unggah foto rancangan motif batik, tenun, anyaman, atau produk kriya di panel sebelah kiri lalu tekan tombol <strong>Cek Sekarang</strong> untuk melihat skor kemiripan visual dan gambar pembanding paling mirip.
+                Unggah foto rancangan motif batik atau produk kriya di panel sebelah kiri lalu tekan tombol <strong>Cek Sekarang</strong> untuk melihat skor kemiripan visual dan perbandingan terhadap dataset 2.599 motif Batik Indonesia.
               </p>
             </div>
           )}
@@ -426,9 +449,20 @@ export default function App() {
                       </div>
                       <div className="item-meta">
                         <span className="item-category">[{item.category.toUpperCase()}]</span>
+                        {item.metadata?.motif && (
+                          <>
+                            <span>•</span>
+                            <span>Motif: {item.metadata.motif}</span>
+                          </>
+                        )}
                         <span>•</span>
                         <span>Status: {item.risk_level}</span>
                       </div>
+                      {item.metadata?.source && (
+                        <div className="item-source-tag">
+                          Sumber: {item.metadata.source} ({item.metadata.license_notice || 'Riset non-komersial'})
+                        </div>
+                      )}
                       {item.metadata?.description && (
                         <p className="item-description">{item.metadata.description}</p>
                       )}

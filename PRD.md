@@ -2,7 +2,7 @@
 
 **Versi:** 0.1 (Draft untuk submission EKRAF x Google Career Certificates)
 **Status:** Draft
-**Owner:** [Nama Tim]
+**Owner:** TITANIO YUDISTA
 **Terakhir diperbarui:** 6 September 2026
 
 ---
@@ -139,26 +139,71 @@ Prinsip: **jangan bangun ulang apa yang sudah ada.** Semua komponen inti pakai m
 
 **Contoh inti pipeline (bukan production-ready, ilustrasi alur):**
 ```python
+from datasets import load_dataset
 from sentence_transformers import SentenceTransformer
 import faiss
+import numpy as np
 
+# 1. Load dataset referensi dari HuggingFace (dataset terpilih untuk MVP,
+#    lihat rasional pemilihan di section 7.1)
+ds = load_dataset("muhammadsalmanalfaridzi/Batik-Indonesia")
+reference_images = [row["image"] for row in ds["train"]]
+reference_labels  = [row.get("label") for row in ds["train"]]  # metadata utk hasil
+
+# 2. Encode ke embedding pakai model pretrained
 model = SentenceTransformer('clip-ViT-B-32')
+reference_embeddings = model.encode(reference_images, convert_to_numpy=True)
 
-# Index dibangun sekali dari dataset referensi
-reference_embeddings = model.encode(reference_images)
+# 3. Bangun index vektor sekali di awal (bisa di-cache/disimpan ke disk)
 index = faiss.IndexFlatL2(reference_embeddings.shape[1])
 index.add(reference_embeddings)
 
-# Saat user upload gambar baru
-query_embedding = model.encode([uploaded_image])
+# 4. Saat user upload gambar baru
+query_embedding = model.encode([uploaded_image], convert_to_numpy=True)
 distances, indices = index.search(query_embedding, k=5)
-# -> mapping distance ke skor kemiripan (0-100%) + ambil metadata gambar pembanding
+# -> mapping distance ke skor kemiripan (0-100%), ambil reference_labels[i] 
+#    dan gambar pembanding untuk ditampilkan ke user
 ```
 
 ### 7.1 Data Requirements
-- Dataset referensi MVP: 300–1000 gambar kurasi manual dari kategori kriya/fashion yang relevan (scraping ringan dari marketplace kategori kriya + dataset motif budaya publik yang tersedia untuk riset).
-- Tidak perlu dataset besar untuk membuktikan konsep — kualitas kurasi lebih penting daripada kuantitas di tahap demo.
-- Untuk versi pasca-hackathon: perlu strategi kemitraan data (asosiasi kriya, dinas koperasi, atau DJKI) untuk scale.
+
+**Dataset terpilih untuk MVP:** [HuggingFace — Batik-Indonesia (muhammadsalmanalfaridzi)](https://huggingface.co/datasets/muhammadsalmanalfaridzi/Batik-Indonesia)
+
+```python
+from datasets import load_dataset
+ds = load_dataset("muhammadsalmanalfaridzi/Batik-Indonesia")
+```
+
+Alasan pemilihan:
+- Volume terbesar dari semua kandidat (2.599 gambar) → cukup untuk index similarity search yang tidak terlalu sparse.
+- Format `imagefolder` via `datasets` library — langsung kompatibel dengan pipeline embedding (section 7), tidak perlu preprocessing manual seperti unzip/rename dari Kaggle.
+- Sudah dalam bentuk HuggingFace Dataset object → gampang diiris untuk train/index-build vs held-out test set saat validasi kualitatif (lihat section 9).
+
+Yang harus dicek/dikerjakan tim sebelum dipakai ke index produksi (bukan blocker untuk demo):
+- Baca ulang dataset card untuk detail lisensi per-gambar — belum ada pernyataan lisensi tunggal yang eksplisit di level dataset, jadi perlakukan sebagai *"riset non-komersial"* untuk MVP (lihat catatan provenance di bawah).
+- Cek distribusi kelas/daerah asal di dalam dataset — kalau timpang (misalnya dominan motif Jawa), catat sebagai limitasi saat presentasi, jangan diklaim representatif se-Indonesia.
+
+**Dataset cadangan/pelengkap** (kalau butuh menambah variasi kelas atau butuh data beranotasi lisensi jelas):
+
+| Sumber | Isi | Lisensi | Kegunaan |
+|---|---|---|---|
+| Kaggle — Dataset Batik Indonesia (on dev) | 20 kelas motif batik, ±150 gambar/kelas, sudah ada split train/val/test | CC0 | Cadangan kalau butuh split siap pakai |
+| Roboflow — Motif Batik | 950 gambar beranotasi jenis batik | Public Domain | Kalau butuh anotasi kelas sekaligus |
+| PDKI (pdki-indonesia.dgip.go.id) | Desain industri terdaftar resmi | Data publik pemerintah, akses manual per-item (bukan bulk/API) | Kurasi manual puluhan contoh "ground truth" desain yang sudah resmi terdaftar |
+
+Untuk kategori **tenun/kriya non-batik**, tidak ditemukan dataset publik siap-download yang setara — yang ada hanya dataset internal di beberapa paper akademik (misal riset klasifikasi motif tenun Flores/Sikka-Ende-Nagekeo-Manggarai) yang harus diminta langsung ke penulis, tanpa garansi respons. Implikasinya: **cakupan MVP realistis difokuskan ke batik dulu** memakai dataset HuggingFace di atas, tenun/kriya lain masuk roadmap V1 setelah ada kemitraan data.
+
+**⚠️ Catatan kritis — provenance & lisensi data (wajib dibahas di pitch):**
+
+Sebagian besar dataset batik publik di atas awalnya dikumpulkan lewat *image scraping* dari Google Image, Bing, atau Instagram — artinya status hak cipta gambar sumber aslinya sendiri ambigu. Ini berisiko jadi celah kritik langsung dari juri: sebuah alat cek-orisinalitas yang index referensinya dibangun dari data yang provenance hak ciptanya sendiri tidak jelas adalah kontradiksi yang harus diantisipasi, bukan disembunyikan.
+
+Mitigasi yang harus masuk ke pitch:
+- **Untuk demo/hackathon:** dataset di atas dipakai eksplisit sebagai *"dataset riset non-komersial untuk proof-of-concept"*, bukan diklaim sebagai index produksi final.
+- **Untuk roadmap V1 (lihat section 11):** strategi data yang defensible secara hukum dan lebih kredibel di depan juri adalah index dibangun dari kombinasi:
+  1. Foto yang di-*submit* sendiri oleh pengrajin/UMKM secara opt-in (mereka pemilik hak atas foto sendiri) — sekaligus jadi mekanisme "pendaftaran mandiri" desain ke sistem.
+  2. Koleksi warisan budaya yang sudah berstatus domain publik (misal koleksi Museum Tekstil Jakarta yang sedang didigitalkan lewat inisiatif Jakarta Digital Collections/KoleksiKita, dan koleksi yang sudah dipublikasikan via Google Arts & Culture).
+  3. Data desain industri resmi dari PDKI sebagai referensi "desain yang sudah terdaftar sah".
+- Tidak perlu dataset besar untuk membuktikan konsep — kualitas kurasi dan kejelasan provenance lebih penting daripada kuantitas di tahap demo.
 
 ---
 

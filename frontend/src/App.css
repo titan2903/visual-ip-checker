@@ -584,6 +584,14 @@
   color: var(--color-ink-muted);
 }
 
+.item-source-tag {
+  margin-top: 4px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-indigo);
+  letter-spacing: -0.2px;
+}
+
 .item-category {
   color: var(--color-indigo);
   font-weight: 500;

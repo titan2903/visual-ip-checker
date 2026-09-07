@@ -2,8 +2,9 @@ import io
 import time
 import logging
 from pathlib import Path
+from typing import Optional
 from PIL import Image, UnidentifiedImageError
-from fastapi import APIRouter, UploadFile, File, HTTPException, status
+from fastapi import APIRouter, UploadFile, File, Form, HTTPException, status
 
 from backend.app.config import (
     MAX_UPLOAD_SIZE_BYTES,
@@ -40,7 +41,8 @@ def health_check():
 
 @router.post("/check", response_model=CheckResponse, tags=["Visual IP Check"])
 async def check_visual_similarity(
-    file: UploadFile = File(..., description="Foto desain/produk kriya atau fashion (JPEG/PNG/WEBP, max 5MB)")
+    file: UploadFile = File(..., description="Foto desain/produk kriya atau fashion (JPEG/PNG/WEBP, max 5MB)"),
+    category: Optional[str] = Form(None, description="Kategori filter produk opsional (misal: 'batik', 'tenun')"),
 ):
     """
     Endpoint utama screening visual kemiripan desain (PRD Section 6 & 7):
@@ -132,7 +134,7 @@ async def check_visual_similarity(
     # 7. Similarity search (FAISS)
     try:
         results, max_score, risk_level, recommendation = search_service.search(
-            query_vector, top_k=DEFAULT_TOP_K
+            query_vector, top_k=DEFAULT_TOP_K, category=category
         )
     except Exception as e:
         logger.error(f"Search failed: {e}")

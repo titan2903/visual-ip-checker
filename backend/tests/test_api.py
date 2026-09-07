@@ -45,9 +45,27 @@ def test_health_endpoint(client: TestClient):
 
 
 def test_static_reference_image(client: TestClient):
-    response = client.get("/static/reference_images/batik_parang_01.jpg")
+    from backend.app.services.search_service import SearchService
+    search_service = SearchService.get_instance()
+    filename = "batik_parang_01.jpg"
+    if search_service.metadata and len(search_service.metadata) > 0:
+        filename = search_service.metadata[0].get("filename", filename)
+
+    response = client.get(f"/static/reference_images/{filename}")
     assert response.status_code == 200
     assert response.headers["content-type"].startswith("image/")
+
+
+def test_check_with_category_filter(client: TestClient):
+    img_bytes = create_test_image_bytes(format="JPEG", color=(120, 65, 30))
+    files = {"file": ("query_filter_test.jpg", img_bytes, "image/jpeg")}
+    data = {"category": "batik"}
+    response = client.post("/check", files=files, data=data)
+
+    assert response.status_code == 200
+    res_data = response.json()
+    assert res_data["status"] == "success"
+    assert len(res_data["results"]) > 0
 
 
 def test_check_valid_image(client: TestClient):

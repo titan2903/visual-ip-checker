@@ -1,158 +1,3402 @@
 [
   {
     "id": 0,
-    "filename": "anyaman_rotan_lombok_06.jpg",
-    "title": "Anyaman Rotan Motif Selisih",
-    "category": "anyaman",
+    "filename": "hf_batik_0000_aceh.jpg",
+    "title": "Batik Aceh #1",
+    "category": "batik",
+    "label": "Aceh",
     "metadata": {
-      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/anyaman_rotan_lombok_06.jpg",
-      "width": 400,
-      "height": 400,
-      "description": "Pola silang anyaman rotan natural khas Lombok",
-      "source": "dummy_dataset_curated"
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0000_aceh.jpg",
+      "width": 576,
+      "height": 576,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
     }
   },
   {
     "id": 1,
-    "filename": "batik_kawung_02.jpg",
-    "title": "Batik Kawung Empat Pola",
+    "filename": "hf_batik_0001_aceh.jpg",
+    "title": "Batik Aceh #2",
     "category": "batik",
+    "label": "Aceh",
     "metadata": {
-      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/batik_kawung_02.jpg",
-      "width": 400,
-      "height": 400,
-      "description": "Motif elips empat arah beraturan buah kawung/kolang-kaling",
-      "source": "dummy_dataset_curated"
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0001_aceh.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
     }
   },
   {
     "id": 2,
-    "filename": "batik_megamendung_05.jpg",
-    "title": "Batik Megamendung Cirebon",
+    "filename": "hf_batik_0002_aceh.jpg",
+    "title": "Batik Aceh #3",
     "category": "batik",
+    "label": "Aceh",
     "metadata": {
-      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/batik_megamendung_05.jpg",
-      "width": 400,
-      "height": 400,
-      "description": "Pola awan megamendung khas pesisir Cirebon gradasi biru",
-      "source": "dummy_dataset_curated"
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0002_aceh.jpg",
+      "width": 861,
+      "height": 861,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
     }
   },
   {
     "id": 3,
-    "filename": "batik_parang_01.jpg",
-    "title": "Batik Parang Rusak Klasik",
+    "filename": "hf_batik_0003_aceh.jpg",
+    "title": "Batik Aceh #4",
     "category": "batik",
+    "label": "Aceh",
     "metadata": {
-      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/batik_parang_01.jpg",
-      "width": 400,
-      "height": 400,
-      "description": "Motif parang diagonal soga cokelat tradisional Surakarta",
-      "source": "dummy_dataset_curated"
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0003_aceh.jpg",
+      "width": 350,
+      "height": 350,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
     }
   },
   {
     "id": 4,
-    "filename": "batik_truntum_solo_10.jpg",
-    "title": "Batik Truntum Bintang Melati",
+    "filename": "hf_batik_0004_aceh.jpg",
+    "title": "Batik Aceh #5",
     "category": "batik",
+    "label": "Aceh",
     "metadata": {
-      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/batik_truntum_solo_10.jpg",
-      "width": 400,
-      "height": 400,
-      "description": "Motif truntum bunga melati bintang kecil berulang",
-      "source": "dummy_dataset_curated"
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0004_aceh.jpg",
+      "width": 747,
+      "height": 747,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
     }
   },
   {
     "id": 5,
-    "filename": "kain_lurik_yogyakarta_09.jpg",
-    "title": "Kain Lurik Garis Klasik",
-    "category": "tenun",
+    "filename": "hf_batik_0005_aceh.jpg",
+    "title": "Batik Aceh #6",
+    "category": "batik",
+    "label": "Aceh",
     "metadata": {
-      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/kain_lurik_yogyakarta_09.jpg",
-      "width": 400,
-      "height": 400,
-      "description": "Garis vertikal rapat tradisional Yogyakarta",
-      "source": "dummy_dataset_curated"
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0005_aceh.jpg",
+      "width": 621,
+      "height": 621,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
     }
   },
   {
     "id": 6,
-    "filename": "outer_tenun_modern_11.jpg",
-    "title": "Outer Etnik Geometris Modern",
-    "category": "fashion",
+    "filename": "hf_batik_0006_aceh.jpg",
+    "title": "Batik Aceh #7",
+    "category": "batik",
+    "label": "Aceh",
     "metadata": {
-      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/outer_tenun_modern_11.jpg",
-      "width": 400,
-      "height": 400,
-      "description": "Desain blazer tenun asimetris color block kontemporer",
-      "source": "dummy_dataset_curated"
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0006_aceh.jpg",
+      "width": 750,
+      "height": 750,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
     }
   },
   {
     "id": 7,
-    "filename": "selendang_batik_pekalongan_12.jpg",
-    "title": "Selendang Batik Buketan Pekalongan",
+    "filename": "hf_batik_0007_aceh.jpg",
+    "title": "Batik Aceh #8",
     "category": "batik",
+    "label": "Aceh",
     "metadata": {
-      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/selendang_batik_pekalongan_12.jpg",
-      "width": 400,
-      "height": 400,
-      "description": "Motif buketan bunga pesisiran cerah khas Pekalongan",
-      "source": "dummy_dataset_curated"
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0007_aceh.jpg",
+      "width": 668,
+      "height": 668,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
     }
   },
   {
     "id": 8,
-    "filename": "tas_kulit_tatah_08.jpg",
-    "title": "Tas Kulit Tatah Manding",
-    "category": "fashion",
+    "filename": "hf_batik_0008_aceh.jpg",
+    "title": "Batik Aceh #9",
+    "category": "batik",
+    "label": "Aceh",
     "metadata": {
-      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/tas_kulit_tatah_08.jpg",
-      "width": 400,
-      "height": 400,
-      "description": "Pola cap tatah etnik geometris pada kulit nabati",
-      "source": "dummy_dataset_curated"
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0008_aceh.jpg",
+      "width": 744,
+      "height": 744,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
     }
   },
   {
     "id": 9,
-    "filename": "tenun_ikat_sumba_03.jpg",
-    "title": "Tenun Ikat Sumba Timur",
-    "category": "tenun",
+    "filename": "hf_batik_0009_aceh.jpg",
+    "title": "Batik Aceh #10",
+    "category": "batik",
+    "label": "Aceh",
     "metadata": {
-      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/tenun_ikat_sumba_03.jpg",
-      "width": 400,
-      "height": 400,
-      "description": "Pola pita geometris tenun ikat pewarna alam indigo dan terakota",
-      "source": "dummy_dataset_curated"
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0009_aceh.jpg",
+      "width": 466,
+      "height": 466,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
     }
   },
   {
     "id": 10,
-    "filename": "tenun_songket_palembang_04.jpg",
-    "title": "Tenun Songket Lepus Emas",
-    "category": "tenun",
+    "filename": "hf_batik_0010_aceh.jpg",
+    "title": "Batik Aceh #11",
+    "category": "batik",
+    "label": "Aceh",
     "metadata": {
-      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/tenun_songket_palembang_04.jpg",
-      "width": 400,
-      "height": 400,
-      "description": "Songket tenun benang emas khas Palembang berlatar marun",
-      "source": "dummy_dataset_curated"
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0010_aceh.jpg",
+      "width": 515,
+      "height": 515,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
     }
   },
   {
     "id": 11,
-    "filename": "ukiran_kayu_jepara_07.jpg",
-    "title": "Relief Ukiran Kayu Jepara",
-    "category": "kerajinan",
+    "filename": "hf_batik_0011_aceh.jpg",
+    "title": "Batik Aceh #12",
+    "category": "batik",
+    "label": "Aceh",
     "metadata": {
-      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/ukiran_kayu_jepara_07.jpg",
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0011_aceh.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 12,
+    "filename": "hf_batik_0012_aceh.jpg",
+    "title": "Batik Aceh #13",
+    "category": "batik",
+    "label": "Aceh",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0012_aceh.jpg",
+      "width": 690,
+      "height": 690,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 13,
+    "filename": "hf_batik_0013_aceh.jpg",
+    "title": "Batik Aceh #14",
+    "category": "batik",
+    "label": "Aceh",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0013_aceh.jpg",
+      "width": 420,
+      "height": 420,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 14,
+    "filename": "hf_batik_0014_aceh.jpg",
+    "title": "Batik Aceh #15",
+    "category": "batik",
+    "label": "Aceh",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0014_aceh.jpg",
+      "width": 640,
+      "height": 640,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 15,
+    "filename": "hf_batik_0015_aceh.jpg",
+    "title": "Batik Aceh #16",
+    "category": "batik",
+    "label": "Aceh",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0015_aceh.jpg",
+      "width": 640,
+      "height": 640,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 16,
+    "filename": "hf_batik_0016_aceh.jpg",
+    "title": "Batik Aceh #17",
+    "category": "batik",
+    "label": "Aceh",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0016_aceh.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 17,
+    "filename": "hf_batik_0017_aceh.jpg",
+    "title": "Batik Aceh #18",
+    "category": "batik",
+    "label": "Aceh",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0017_aceh.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 18,
+    "filename": "hf_batik_0018_aceh.jpg",
+    "title": "Batik Aceh #19",
+    "category": "batik",
+    "label": "Aceh",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0018_aceh.jpg",
+      "width": 696,
+      "height": 696,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 19,
+    "filename": "hf_batik_0019_aceh.jpg",
+    "title": "Batik Aceh #20",
+    "category": "batik",
+    "label": "Aceh",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0019_aceh.jpg",
+      "width": 701,
+      "height": 701,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 20,
+    "filename": "hf_batik_0020_aceh.jpg",
+    "title": "Batik Aceh #21",
+    "category": "batik",
+    "label": "Aceh",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0020_aceh.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 21,
+    "filename": "hf_batik_0021_aceh.jpg",
+    "title": "Batik Aceh #22",
+    "category": "batik",
+    "label": "Aceh",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0021_aceh.jpg",
+      "width": 394,
+      "height": 394,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 22,
+    "filename": "hf_batik_0022_aceh.jpg",
+    "title": "Batik Aceh #23",
+    "category": "batik",
+    "label": "Aceh",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0022_aceh.jpg",
+      "width": 241,
+      "height": 241,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 23,
+    "filename": "hf_batik_0023_aceh.jpg",
+    "title": "Batik Aceh #24",
+    "category": "batik",
+    "label": "Aceh",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0023_aceh.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 24,
+    "filename": "hf_batik_0024_aceh.jpg",
+    "title": "Batik Aceh #25",
+    "category": "batik",
+    "label": "Aceh",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0024_aceh.jpg",
+      "width": 716,
+      "height": 716,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 25,
+    "filename": "hf_batik_0025_aceh.jpg",
+    "title": "Batik Aceh #26",
+    "category": "batik",
+    "label": "Aceh",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0025_aceh.jpg",
+      "width": 375,
+      "height": 375,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 26,
+    "filename": "hf_batik_0026_aceh.jpg",
+    "title": "Batik Aceh #27",
+    "category": "batik",
+    "label": "Aceh",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0026_aceh.jpg",
+      "width": 1000,
+      "height": 1000,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 27,
+    "filename": "hf_batik_0027_aceh.jpg",
+    "title": "Batik Aceh #28",
+    "category": "batik",
+    "label": "Aceh",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0027_aceh.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 28,
+    "filename": "hf_batik_0028_aceh.jpg",
+    "title": "Batik Aceh #29",
+    "category": "batik",
+    "label": "Aceh",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0028_aceh.jpg",
+      "width": 944,
+      "height": 944,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 29,
+    "filename": "hf_batik_0029_aceh.jpg",
+    "title": "Batik Aceh #30",
+    "category": "batik",
+    "label": "Aceh",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0029_aceh.jpg",
+      "width": 473,
+      "height": 473,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 30,
+    "filename": "hf_batik_0030_aceh.jpg",
+    "title": "Batik Aceh #31",
+    "category": "batik",
+    "label": "Aceh",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0030_aceh.jpg",
+      "width": 620,
+      "height": 620,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 31,
+    "filename": "hf_batik_0031_aceh.jpg",
+    "title": "Batik Aceh #32",
+    "category": "batik",
+    "label": "Aceh",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0031_aceh.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 32,
+    "filename": "hf_batik_0032_aceh.jpg",
+    "title": "Batik Aceh #33",
+    "category": "batik",
+    "label": "Aceh",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0032_aceh.jpg",
+      "width": 700,
+      "height": 700,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 33,
+    "filename": "hf_batik_0033_aceh.jpg",
+    "title": "Batik Aceh #34",
+    "category": "batik",
+    "label": "Aceh",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0033_aceh.jpg",
+      "width": 750,
+      "height": 750,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 34,
+    "filename": "hf_batik_0034_aceh.jpg",
+    "title": "Batik Aceh #35",
+    "category": "batik",
+    "label": "Aceh",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0034_aceh.jpg",
+      "width": 800,
+      "height": 800,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 35,
+    "filename": "hf_batik_0035_aceh.jpg",
+    "title": "Batik Aceh #36",
+    "category": "batik",
+    "label": "Aceh",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0035_aceh.jpg",
+      "width": 310,
+      "height": 310,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 36,
+    "filename": "hf_batik_0036_aceh.jpg",
+    "title": "Batik Aceh #37",
+    "category": "batik",
+    "label": "Aceh",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0036_aceh.jpg",
+      "width": 338,
+      "height": 338,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 37,
+    "filename": "hf_batik_0037_aceh.jpg",
+    "title": "Batik Aceh #38",
+    "category": "batik",
+    "label": "Aceh",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0037_aceh.jpg",
+      "width": 321,
+      "height": 321,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 38,
+    "filename": "hf_batik_0038_aceh.jpg",
+    "title": "Batik Aceh #39",
+    "category": "batik",
+    "label": "Aceh",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0038_aceh.jpg",
+      "width": 249,
+      "height": 249,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 39,
+    "filename": "hf_batik_0039_aceh.jpg",
+    "title": "Batik Aceh #40",
+    "category": "batik",
+    "label": "Aceh",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0039_aceh.jpg",
+      "width": 720,
+      "height": 720,
+      "motif": "Aceh",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Aceh dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 40,
+    "filename": "hf_batik_0040_bali.jpg",
+    "title": "Batik Bali #41",
+    "category": "batik",
+    "label": "Bali",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0040_bali.jpg",
+      "width": 300,
+      "height": 300,
+      "motif": "Bali",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 41,
+    "filename": "hf_batik_0041_bali.jpg",
+    "title": "Batik Bali #42",
+    "category": "batik",
+    "label": "Bali",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0041_bali.jpg",
+      "width": 269,
+      "height": 320,
+      "motif": "Bali",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 42,
+    "filename": "hf_batik_0042_bali.jpg",
+    "title": "Batik Bali #43",
+    "category": "batik",
+    "label": "Bali",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0042_bali.jpg",
+      "width": 1600,
+      "height": 1564,
+      "motif": "Bali",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 43,
+    "filename": "hf_batik_0043_bali.jpg",
+    "title": "Batik Bali #44",
+    "category": "batik",
+    "label": "Bali",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0043_bali.jpg",
+      "width": 545,
+      "height": 409,
+      "motif": "Bali",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 44,
+    "filename": "hf_batik_0044_bali.jpg",
+    "title": "Batik Bali #45",
+    "category": "batik",
+    "label": "Bali",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0044_bali.jpg",
+      "width": 400,
+      "height": 300,
+      "motif": "Bali",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 45,
+    "filename": "hf_batik_0045_bali.jpg",
+    "title": "Batik Bali #46",
+    "category": "batik",
+    "label": "Bali",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0045_bali.jpg",
+      "width": 500,
+      "height": 333,
+      "motif": "Bali",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 46,
+    "filename": "hf_batik_0046_bali.jpg",
+    "title": "Batik Bali #47",
+    "category": "batik",
+    "label": "Bali",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0046_bali.jpg",
+      "width": 320,
+      "height": 266,
+      "motif": "Bali",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 47,
+    "filename": "hf_batik_0047_bali.jpg",
+    "title": "Batik Bali #48",
+    "category": "batik",
+    "label": "Bali",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0047_bali.jpg",
+      "width": 626,
+      "height": 422,
+      "motif": "Bali",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 48,
+    "filename": "hf_batik_0048_bali.jpg",
+    "title": "Batik Bali #49",
+    "category": "batik",
+    "label": "Bali",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0048_bali.jpg",
+      "width": 3664,
+      "height": 2748,
+      "motif": "Bali",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 49,
+    "filename": "hf_batik_0049_bali.jpg",
+    "title": "Batik Bali #50",
+    "category": "batik",
+    "label": "Bali",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0049_bali.jpg",
+      "width": 1300,
+      "height": 957,
+      "motif": "Bali",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 50,
+    "filename": "hf_batik_0050_bali.jpg",
+    "title": "Batik Bali #51",
+    "category": "batik",
+    "label": "Bali",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0050_bali.jpg",
+      "width": 1504,
+      "height": 1000,
+      "motif": "Bali",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 51,
+    "filename": "hf_batik_0051_bali.jpg",
+    "title": "Batik Bali #52",
+    "category": "batik",
+    "label": "Bali",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0051_bali.jpg",
+      "width": 541,
+      "height": 259,
+      "motif": "Bali",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 52,
+    "filename": "hf_batik_0052_bali.jpg",
+    "title": "Batik Bali #53",
+    "category": "batik",
+    "label": "Bali",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0052_bali.jpg",
+      "width": 801,
+      "height": 1200,
+      "motif": "Bali",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 53,
+    "filename": "hf_batik_0053_bali.jpg",
+    "title": "Batik Bali #54",
+    "category": "batik",
+    "label": "Bali",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0053_bali.jpg",
+      "width": 998,
+      "height": 1000,
+      "motif": "Bali",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 54,
+    "filename": "hf_batik_0054_bali.jpg",
+    "title": "Batik Bali #55",
+    "category": "batik",
+    "label": "Bali",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0054_bali.jpg",
+      "width": 1300,
+      "height": 957,
+      "motif": "Bali",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 55,
+    "filename": "hf_batik_0055_bali.jpg",
+    "title": "Batik Bali #56",
+    "category": "batik",
+    "label": "Bali",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0055_bali.jpg",
+      "width": 1280,
+      "height": 853,
+      "motif": "Bali",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 56,
+    "filename": "hf_batik_0056_bali.jpg",
+    "title": "Batik Bali #57",
+    "category": "batik",
+    "label": "Bali",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0056_bali.jpg",
+      "width": 897,
+      "height": 890,
+      "motif": "Bali",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 57,
+    "filename": "hf_batik_0057_bali.jpg",
+    "title": "Batik Bali #58",
+    "category": "batik",
+    "label": "Bali",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0057_bali.jpg",
+      "width": 2996,
+      "height": 1970,
+      "motif": "Bali",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 58,
+    "filename": "hf_batik_0058_bali.jpg",
+    "title": "Batik Bali #59",
+    "category": "batik",
+    "label": "Bali",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0058_bali.jpg",
+      "width": 750,
+      "height": 430,
+      "motif": "Bali",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 59,
+    "filename": "hf_batik_0059_bali.jpg",
+    "title": "Batik Bali #60",
+    "category": "batik",
+    "label": "Bali",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0059_bali.jpg",
+      "width": 1920,
+      "height": 1080,
+      "motif": "Bali",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 60,
+    "filename": "hf_batik_0060_bali.jpg",
+    "title": "Batik Bali #61",
+    "category": "batik",
+    "label": "Bali",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0060_bali.jpg",
+      "width": 1719,
+      "height": 1719,
+      "motif": "Bali",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 61,
+    "filename": "hf_batik_0061_bali.jpg",
+    "title": "Batik Bali #62",
+    "category": "batik",
+    "label": "Bali",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0061_bali.jpg",
+      "width": 957,
+      "height": 1300,
+      "motif": "Bali",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 62,
+    "filename": "hf_batik_0062_bali.jpg",
+    "title": "Batik Bali #63",
+    "category": "batik",
+    "label": "Bali",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0062_bali.jpg",
+      "width": 1400,
+      "height": 787,
+      "motif": "Bali",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 63,
+    "filename": "hf_batik_0063_bali.jpg",
+    "title": "Batik Bali #64",
+    "category": "batik",
+    "label": "Bali",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0063_bali.jpg",
+      "width": 626,
+      "height": 626,
+      "motif": "Bali",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 64,
+    "filename": "hf_batik_0064_bali.jpg",
+    "title": "Batik Bali #65",
+    "category": "batik",
+    "label": "Bali",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0064_bali.jpg",
+      "width": 1600,
+      "height": 1200,
+      "motif": "Bali",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 65,
+    "filename": "hf_batik_0065_bali_barong.jpg",
+    "title": "Batik Bali Barong #66",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0065_bali_barong.jpg",
+      "width": 276,
+      "height": 276,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 66,
+    "filename": "hf_batik_0066_bali_barong.jpg",
+    "title": "Batik Bali Barong #67",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0066_bali_barong.jpg",
+      "width": 1200,
+      "height": 1200,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 67,
+    "filename": "hf_batik_0067_bali_barong.jpg",
+    "title": "Batik Bali Barong #68",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0067_bali_barong.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 68,
+    "filename": "hf_batik_0068_bali_barong.jpg",
+    "title": "Batik Bali Barong #69",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0068_bali_barong.jpg",
+      "width": 302,
+      "height": 302,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 69,
+    "filename": "hf_batik_0069_bali_barong.jpg",
+    "title": "Batik Bali Barong #70",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0069_bali_barong.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 70,
+    "filename": "hf_batik_0070_bali_barong.jpg",
+    "title": "Batik Bali Barong #71",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0070_bali_barong.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 71,
+    "filename": "hf_batik_0071_bali_barong.jpg",
+    "title": "Batik Bali Barong #72",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0071_bali_barong.jpg",
+      "width": 417,
+      "height": 417,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 72,
+    "filename": "hf_batik_0072_bali_barong.jpg",
+    "title": "Batik Bali Barong #73",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0072_bali_barong.jpg",
+      "width": 750,
+      "height": 750,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 73,
+    "filename": "hf_batik_0073_bali_barong.jpg",
+    "title": "Batik Bali Barong #74",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0073_bali_barong.jpg",
+      "width": 430,
+      "height": 430,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 74,
+    "filename": "hf_batik_0074_bali_barong.jpg",
+    "title": "Batik Bali Barong #75",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0074_bali_barong.jpg",
+      "width": 1090,
+      "height": 1090,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 75,
+    "filename": "hf_batik_0075_bali_barong.jpg",
+    "title": "Batik Bali Barong #76",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0075_bali_barong.jpg",
+      "width": 600,
+      "height": 600,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 76,
+    "filename": "hf_batik_0076_bali_barong.jpg",
+    "title": "Batik Bali Barong #77",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0076_bali_barong.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 77,
+    "filename": "hf_batik_0077_bali_barong.jpg",
+    "title": "Batik Bali Barong #78",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0077_bali_barong.jpg",
+      "width": 744,
+      "height": 744,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 78,
+    "filename": "hf_batik_0078_bali_barong.jpg",
+    "title": "Batik Bali Barong #79",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0078_bali_barong.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 79,
+    "filename": "hf_batik_0079_bali_barong.jpg",
+    "title": "Batik Bali Barong #80",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0079_bali_barong.jpg",
+      "width": 441,
+      "height": 441,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 80,
+    "filename": "hf_batik_0080_bali_barong.jpg",
+    "title": "Batik Bali Barong #81",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0080_bali_barong.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 81,
+    "filename": "hf_batik_0081_bali_barong.jpg",
+    "title": "Batik Bali Barong #82",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0081_bali_barong.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 82,
+    "filename": "hf_batik_0082_bali_barong.jpg",
+    "title": "Batik Bali Barong #83",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0082_bali_barong.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 83,
+    "filename": "hf_batik_0083_bali_barong.jpg",
+    "title": "Batik Bali Barong #84",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0083_bali_barong.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 84,
+    "filename": "hf_batik_0084_bali_barong.jpg",
+    "title": "Batik Bali Barong #85",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0084_bali_barong.jpg",
+      "width": 404,
+      "height": 404,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 85,
+    "filename": "hf_batik_0085_bali_barong.jpg",
+    "title": "Batik Bali Barong #86",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0085_bali_barong.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 86,
+    "filename": "hf_batik_0086_bali_barong.jpg",
+    "title": "Batik Bali Barong #87",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0086_bali_barong.jpg",
+      "width": 423,
+      "height": 423,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 87,
+    "filename": "hf_batik_0087_bali_barong.jpg",
+    "title": "Batik Bali Barong #88",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0087_bali_barong.jpg",
+      "width": 370,
+      "height": 370,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 88,
+    "filename": "hf_batik_0088_bali_barong.jpg",
+    "title": "Batik Bali Barong #89",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0088_bali_barong.jpg",
+      "width": 412,
+      "height": 412,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 89,
+    "filename": "hf_batik_0089_bali_barong.jpg",
+    "title": "Batik Bali Barong #90",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0089_bali_barong.jpg",
+      "width": 428,
+      "height": 428,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 90,
+    "filename": "hf_batik_0090_bali_barong.jpg",
+    "title": "Batik Bali Barong #91",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0090_bali_barong.jpg",
+      "width": 450,
+      "height": 450,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 91,
+    "filename": "hf_batik_0091_bali_barong.jpg",
+    "title": "Batik Bali Barong #92",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0091_bali_barong.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 92,
+    "filename": "hf_batik_0092_bali_barong.jpg",
+    "title": "Batik Bali Barong #93",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0092_bali_barong.jpg",
+      "width": 630,
+      "height": 630,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 93,
+    "filename": "hf_batik_0093_bali_barong.jpg",
+    "title": "Batik Bali Barong #94",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0093_bali_barong.jpg",
+      "width": 446,
+      "height": 446,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 94,
+    "filename": "hf_batik_0094_bali_barong.jpg",
+    "title": "Batik Bali Barong #95",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0094_bali_barong.jpg",
+      "width": 434,
+      "height": 434,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 95,
+    "filename": "hf_batik_0095_bali_barong.jpg",
+    "title": "Batik Bali Barong #96",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0095_bali_barong.jpg",
+      "width": 399,
+      "height": 399,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 96,
+    "filename": "hf_batik_0096_bali_barong.jpg",
+    "title": "Batik Bali Barong #97",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0096_bali_barong.jpg",
+      "width": 477,
+      "height": 477,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 97,
+    "filename": "hf_batik_0097_bali_barong.jpg",
+    "title": "Batik Bali Barong #98",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0097_bali_barong.jpg",
+      "width": 750,
+      "height": 750,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 98,
+    "filename": "hf_batik_0098_bali_barong.jpg",
+    "title": "Batik Bali Barong #99",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0098_bali_barong.jpg",
+      "width": 1281,
+      "height": 1281,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 99,
+    "filename": "hf_batik_0099_bali_barong.jpg",
+    "title": "Batik Bali Barong #100",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0099_bali_barong.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 100,
+    "filename": "hf_batik_0100_bali_barong.jpg",
+    "title": "Batik Bali Barong #101",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0100_bali_barong.jpg",
+      "width": 720,
+      "height": 720,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 101,
+    "filename": "hf_batik_0101_bali_barong.jpg",
+    "title": "Batik Bali Barong #102",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0101_bali_barong.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 102,
+    "filename": "hf_batik_0102_bali_barong.jpg",
+    "title": "Batik Bali Barong #103",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0102_bali_barong.jpg",
+      "width": 699,
+      "height": 699,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 103,
+    "filename": "hf_batik_0103_bali_barong.jpg",
+    "title": "Batik Bali Barong #104",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0103_bali_barong.jpg",
+      "width": 279,
+      "height": 279,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 104,
+    "filename": "hf_batik_0104_bali_barong.jpg",
+    "title": "Batik Bali Barong #105",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0104_bali_barong.jpg",
+      "width": 644,
+      "height": 644,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 105,
+    "filename": "hf_batik_0105_bali_barong.jpg",
+    "title": "Batik Bali Barong #106",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0105_bali_barong.jpg",
+      "width": 949,
+      "height": 949,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 106,
+    "filename": "hf_batik_0106_bali_barong.jpg",
+    "title": "Batik Bali Barong #107",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0106_bali_barong.jpg",
+      "width": 672,
+      "height": 672,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 107,
+    "filename": "hf_batik_0107_bali_barong.jpg",
+    "title": "Batik Bali Barong #108",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0107_bali_barong.jpg",
+      "width": 800,
+      "height": 800,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 108,
+    "filename": "hf_batik_0108_bali_barong.jpg",
+    "title": "Batik Bali Barong #109",
+    "category": "batik",
+    "label": "Bali_Barong",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0108_bali_barong.jpg",
+      "width": 987,
+      "height": 987,
+      "motif": "Bali Barong",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Barong dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 109,
+    "filename": "hf_batik_0109_bali_merak.jpg",
+    "title": "Batik Bali Merak #110",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0109_bali_merak.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 110,
+    "filename": "hf_batik_0110_bali_merak.jpg",
+    "title": "Batik Bali Merak #111",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0110_bali_merak.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 111,
+    "filename": "hf_batik_0111_bali_merak.jpg",
+    "title": "Batik Bali Merak #112",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0111_bali_merak.jpg",
+      "width": 1172,
+      "height": 1172,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 112,
+    "filename": "hf_batik_0112_bali_merak.jpg",
+    "title": "Batik Bali Merak #113",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0112_bali_merak.jpg",
+      "width": 536,
+      "height": 536,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 113,
+    "filename": "hf_batik_0113_bali_merak.jpg",
+    "title": "Batik Bali Merak #114",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0113_bali_merak.jpg",
+      "width": 702,
+      "height": 702,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 114,
+    "filename": "hf_batik_0114_bali_merak.jpg",
+    "title": "Batik Bali Merak #115",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0114_bali_merak.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 115,
+    "filename": "hf_batik_0115_bali_merak.jpg",
+    "title": "Batik Bali Merak #116",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0115_bali_merak.jpg",
+      "width": 300,
+      "height": 300,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 116,
+    "filename": "hf_batik_0116_bali_merak.jpg",
+    "title": "Batik Bali Merak #117",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0116_bali_merak.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 117,
+    "filename": "hf_batik_0117_bali_merak.jpg",
+    "title": "Batik Bali Merak #118",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0117_bali_merak.jpg",
+      "width": 299,
+      "height": 299,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 118,
+    "filename": "hf_batik_0118_bali_merak.jpg",
+    "title": "Batik Bali Merak #119",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0118_bali_merak.jpg",
+      "width": 1365,
+      "height": 1365,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 119,
+    "filename": "hf_batik_0119_bali_merak.jpg",
+    "title": "Batik Bali Merak #120",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0119_bali_merak.jpg",
+      "width": 1600,
+      "height": 1600,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 120,
+    "filename": "hf_batik_0120_bali_merak.jpg",
+    "title": "Batik Bali Merak #121",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0120_bali_merak.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 121,
+    "filename": "hf_batik_0121_bali_merak.jpg",
+    "title": "Batik Bali Merak #122",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0121_bali_merak.jpg",
+      "width": 640,
+      "height": 640,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 122,
+    "filename": "hf_batik_0122_bali_merak.jpg",
+    "title": "Batik Bali Merak #123",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0122_bali_merak.jpg",
+      "width": 880,
+      "height": 880,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 123,
+    "filename": "hf_batik_0123_bali_merak.jpg",
+    "title": "Batik Bali Merak #124",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0123_bali_merak.jpg",
+      "width": 653,
+      "height": 653,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 124,
+    "filename": "hf_batik_0124_bali_merak.jpg",
+    "title": "Batik Bali Merak #125",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0124_bali_merak.jpg",
+      "width": 320,
+      "height": 320,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 125,
+    "filename": "hf_batik_0125_bali_merak.jpg",
+    "title": "Batik Bali Merak #126",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0125_bali_merak.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 126,
+    "filename": "hf_batik_0126_bali_merak.jpg",
+    "title": "Batik Bali Merak #127",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0126_bali_merak.jpg",
+      "width": 1762,
+      "height": 1762,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 127,
+    "filename": "hf_batik_0127_bali_merak.jpg",
+    "title": "Batik Bali Merak #128",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0127_bali_merak.jpg",
+      "width": 1000,
+      "height": 1000,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 128,
+    "filename": "hf_batik_0128_bali_merak.jpg",
+    "title": "Batik Bali Merak #129",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0128_bali_merak.jpg",
+      "width": 800,
+      "height": 800,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 129,
+    "filename": "hf_batik_0129_bali_merak.jpg",
+    "title": "Batik Bali Merak #130",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0129_bali_merak.jpg",
+      "width": 1280,
+      "height": 1280,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 130,
+    "filename": "hf_batik_0130_bali_merak.jpg",
+    "title": "Batik Bali Merak #131",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0130_bali_merak.jpg",
+      "width": 296,
+      "height": 296,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 131,
+    "filename": "hf_batik_0131_bali_merak.jpg",
+    "title": "Batik Bali Merak #132",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0131_bali_merak.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 132,
+    "filename": "hf_batik_0132_bali_merak.jpg",
+    "title": "Batik Bali Merak #133",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0132_bali_merak.jpg",
+      "width": 640,
+      "height": 640,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 133,
+    "filename": "hf_batik_0133_bali_merak.jpg",
+    "title": "Batik Bali Merak #134",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0133_bali_merak.jpg",
+      "width": 1600,
+      "height": 1600,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 134,
+    "filename": "hf_batik_0134_bali_merak.jpg",
+    "title": "Batik Bali Merak #135",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0134_bali_merak.jpg",
+      "width": 576,
+      "height": 576,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 135,
+    "filename": "hf_batik_0135_bali_merak.jpg",
+    "title": "Batik Bali Merak #136",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0135_bali_merak.jpg",
+      "width": 665,
+      "height": 665,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 136,
+    "filename": "hf_batik_0136_bali_merak.jpg",
+    "title": "Batik Bali Merak #137",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0136_bali_merak.jpg",
+      "width": 1280,
+      "height": 1280,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 137,
+    "filename": "hf_batik_0137_bali_merak.jpg",
+    "title": "Batik Bali Merak #138",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0137_bali_merak.jpg",
+      "width": 653,
+      "height": 653,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 138,
+    "filename": "hf_batik_0138_bali_merak.jpg",
+    "title": "Batik Bali Merak #139",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0138_bali_merak.jpg",
+      "width": 640,
+      "height": 640,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 139,
+    "filename": "hf_batik_0139_bali_merak.jpg",
+    "title": "Batik Bali Merak #140",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0139_bali_merak.jpg",
+      "width": 740,
+      "height": 740,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 140,
+    "filename": "hf_batik_0140_bali_merak.jpg",
+    "title": "Batik Bali Merak #141",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0140_bali_merak.jpg",
+      "width": 1000,
+      "height": 1000,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 141,
+    "filename": "hf_batik_0141_bali_merak.jpg",
+    "title": "Batik Bali Merak #142",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0141_bali_merak.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 142,
+    "filename": "hf_batik_0142_bali_merak.jpg",
+    "title": "Batik Bali Merak #143",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0142_bali_merak.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 143,
+    "filename": "hf_batik_0143_bali_merak.jpg",
+    "title": "Batik Bali Merak #144",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0143_bali_merak.jpg",
+      "width": 1024,
+      "height": 1024,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 144,
+    "filename": "hf_batik_0144_bali_merak.jpg",
+    "title": "Batik Bali Merak #145",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0144_bali_merak.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 145,
+    "filename": "hf_batik_0145_bali_merak.jpg",
+    "title": "Batik Bali Merak #146",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0145_bali_merak.jpg",
+      "width": 640,
+      "height": 640,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 146,
+    "filename": "hf_batik_0146_bali_merak.jpg",
+    "title": "Batik Bali Merak #147",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0146_bali_merak.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 147,
+    "filename": "hf_batik_0147_bali_merak.jpg",
+    "title": "Batik Bali Merak #148",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0147_bali_merak.jpg",
+      "width": 307,
+      "height": 307,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 148,
+    "filename": "hf_batik_0148_bali_merak.jpg",
+    "title": "Batik Bali Merak #149",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0148_bali_merak.jpg",
+      "width": 1000,
+      "height": 1000,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 149,
+    "filename": "hf_batik_0149_bali_merak.jpg",
+    "title": "Batik Bali Merak #150",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0149_bali_merak.jpg",
+      "width": 1600,
+      "height": 1600,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 150,
+    "filename": "hf_batik_0150_bali_merak.jpg",
+    "title": "Batik Bali Merak #151",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0150_bali_merak.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 151,
+    "filename": "hf_batik_0151_bali_merak.jpg",
+    "title": "Batik Bali Merak #152",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0151_bali_merak.jpg",
+      "width": 1280,
+      "height": 1280,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 152,
+    "filename": "hf_batik_0152_bali_merak.jpg",
+    "title": "Batik Bali Merak #153",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0152_bali_merak.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 153,
+    "filename": "hf_batik_0153_bali_merak.jpg",
+    "title": "Batik Bali Merak #154",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0153_bali_merak.jpg",
+      "width": 299,
+      "height": 299,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 154,
+    "filename": "hf_batik_0154_bali_merak.jpg",
+    "title": "Batik Bali Merak #155",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0154_bali_merak.jpg",
+      "width": 224,
+      "height": 224,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 155,
+    "filename": "hf_batik_0155_bali_merak.jpg",
+    "title": "Batik Bali Merak #156",
+    "category": "batik",
+    "label": "Bali_Merak",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0155_bali_merak.jpg",
+      "width": 640,
+      "height": 640,
+      "motif": "Bali Merak",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Bali Merak dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 156,
+    "filename": "hf_batik_0156_betawi.jpg",
+    "title": "Batik Betawi #157",
+    "category": "batik",
+    "label": "Betawi",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0156_betawi.jpg",
+      "width": 1000,
+      "height": 1000,
+      "motif": "Betawi",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Betawi dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 157,
+    "filename": "hf_batik_0157_betawi.jpg",
+    "title": "Batik Betawi #158",
+    "category": "batik",
+    "label": "Betawi",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0157_betawi.jpg",
+      "width": 700,
+      "height": 469,
+      "motif": "Betawi",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Betawi dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 158,
+    "filename": "hf_batik_0158_betawi.jpg",
+    "title": "Batik Betawi #159",
+    "category": "batik",
+    "label": "Betawi",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0158_betawi.jpg",
+      "width": 640,
+      "height": 400,
+      "motif": "Betawi",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Betawi dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 159,
+    "filename": "hf_batik_0159_betawi.jpg",
+    "title": "Batik Betawi #160",
+    "category": "batik",
+    "label": "Betawi",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0159_betawi.jpg",
+      "width": 640,
+      "height": 432,
+      "motif": "Betawi",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Betawi dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 160,
+    "filename": "hf_batik_0160_betawi.jpg",
+    "title": "Batik Betawi #161",
+    "category": "batik",
+    "label": "Betawi",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0160_betawi.jpg",
+      "width": 730,
+      "height": 547,
+      "motif": "Betawi",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Betawi dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 161,
+    "filename": "hf_batik_0161_betawi.jpg",
+    "title": "Batik Betawi #162",
+    "category": "batik",
+    "label": "Betawi",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0161_betawi.jpg",
+      "width": 800,
+      "height": 800,
+      "motif": "Betawi",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Betawi dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 162,
+    "filename": "hf_batik_0162_betawi.jpg",
+    "title": "Batik Betawi #163",
+    "category": "batik",
+    "label": "Betawi",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0162_betawi.jpg",
+      "width": 259,
+      "height": 194,
+      "motif": "Betawi",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Betawi dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 163,
+    "filename": "hf_batik_0163_betawi.jpg",
+    "title": "Batik Betawi #164",
+    "category": "batik",
+    "label": "Betawi",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0163_betawi.jpg",
+      "width": 300,
+      "height": 259,
+      "motif": "Betawi",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Betawi dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 164,
+    "filename": "hf_batik_0164_betawi.jpg",
+    "title": "Batik Betawi #165",
+    "category": "batik",
+    "label": "Betawi",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0164_betawi.jpg",
+      "width": 980,
+      "height": 650,
+      "motif": "Betawi",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Betawi dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 165,
+    "filename": "hf_batik_0165_betawi.jpg",
+    "title": "Batik Betawi #166",
+    "category": "batik",
+    "label": "Betawi",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0165_betawi.jpg",
+      "width": 596,
+      "height": 559,
+      "motif": "Betawi",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Betawi dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 166,
+    "filename": "hf_batik_0166_betawi.jpg",
+    "title": "Batik Betawi #167",
+    "category": "batik",
+    "label": "Betawi",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0166_betawi.jpg",
+      "width": 600,
+      "height": 400,
+      "motif": "Betawi",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Betawi dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 167,
+    "filename": "hf_batik_0167_betawi.jpg",
+    "title": "Batik Betawi #168",
+    "category": "batik",
+    "label": "Betawi",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0167_betawi.jpg",
+      "width": 600,
+      "height": 400,
+      "motif": "Betawi",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Betawi dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 168,
+    "filename": "hf_batik_0168_betawi.jpg",
+    "title": "Batik Betawi #169",
+    "category": "batik",
+    "label": "Betawi",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0168_betawi.jpg",
+      "width": 1024,
+      "height": 1024,
+      "motif": "Betawi",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Betawi dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 169,
+    "filename": "hf_batik_0169_betawi.jpg",
+    "title": "Batik Betawi #170",
+    "category": "batik",
+    "label": "Betawi",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0169_betawi.jpg",
+      "width": 600,
+      "height": 400,
+      "motif": "Betawi",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Betawi dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 170,
+    "filename": "hf_batik_0170_betawi.jpg",
+    "title": "Batik Betawi #171",
+    "category": "batik",
+    "label": "Betawi",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0170_betawi.jpg",
+      "width": 240,
+      "height": 168,
+      "motif": "Betawi",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Betawi dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 171,
+    "filename": "hf_batik_0171_betawi.jpg",
+    "title": "Batik Betawi #172",
+    "category": "batik",
+    "label": "Betawi",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0171_betawi.jpg",
+      "width": 900,
+      "height": 675,
+      "motif": "Betawi",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Betawi dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 172,
+    "filename": "hf_batik_0172_betawi.jpg",
+    "title": "Batik Betawi #173",
+    "category": "batik",
+    "label": "Betawi",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0172_betawi.jpg",
+      "width": 2536,
+      "height": 1572,
+      "motif": "Betawi",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Betawi dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 173,
+    "filename": "hf_batik_0173_betawi.jpg",
+    "title": "Batik Betawi #174",
+    "category": "batik",
+    "label": "Betawi",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0173_betawi.jpg",
+      "width": 750,
+      "height": 986,
+      "motif": "Betawi",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Betawi dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 174,
+    "filename": "hf_batik_0174_betawi.jpg",
+    "title": "Batik Betawi #175",
+    "category": "batik",
+    "label": "Betawi",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0174_betawi.jpg",
+      "width": 1280,
+      "height": 934,
+      "motif": "Betawi",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Betawi dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 175,
+    "filename": "hf_batik_0175_betawi.jpg",
+    "title": "Batik Betawi #176",
+    "category": "batik",
+    "label": "Betawi",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0175_betawi.jpg",
+      "width": 1000,
+      "height": 522,
+      "motif": "Betawi",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Betawi dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 176,
+    "filename": "hf_batik_0176_betawi.jpg",
+    "title": "Batik Betawi #177",
+    "category": "batik",
+    "label": "Betawi",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0176_betawi.jpg",
+      "width": 241,
+      "height": 185,
+      "motif": "Betawi",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Betawi dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 177,
+    "filename": "hf_batik_0177_betawi.jpg",
+    "title": "Batik Betawi #178",
+    "category": "batik",
+    "label": "Betawi",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0177_betawi.jpg",
+      "width": 700,
+      "height": 466,
+      "motif": "Betawi",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Betawi dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 178,
+    "filename": "hf_batik_0178_betawi.jpg",
+    "title": "Batik Betawi #179",
+    "category": "batik",
+    "label": "Betawi",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0178_betawi.jpg",
+      "width": 1000,
+      "height": 1000,
+      "motif": "Betawi",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Betawi dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 179,
+    "filename": "hf_batik_0179_betawi.jpg",
+    "title": "Batik Betawi #180",
+    "category": "batik",
+    "label": "Betawi",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0179_betawi.jpg",
+      "width": 1600,
+      "height": 1200,
+      "motif": "Betawi",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Betawi dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 180,
+    "filename": "hf_batik_0180_celup.jpg",
+    "title": "Batik Celup #181",
+    "category": "batik",
+    "label": "Celup",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0180_celup.jpg",
+      "width": 429,
+      "height": 356,
+      "motif": "Celup",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Celup dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 181,
+    "filename": "hf_batik_0181_celup.jpg",
+    "title": "Batik Celup #182",
+    "category": "batik",
+    "label": "Celup",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0181_celup.jpg",
+      "width": 367,
+      "height": 313,
+      "motif": "Celup",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Celup dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 182,
+    "filename": "hf_batik_0182_celup.jpg",
+    "title": "Batik Celup #183",
+    "category": "batik",
+    "label": "Celup",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0182_celup.jpg",
+      "width": 1441,
+      "height": 1457,
+      "motif": "Celup",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Celup dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 183,
+    "filename": "hf_batik_0183_celup.jpg",
+    "title": "Batik Celup #184",
+    "category": "batik",
+    "label": "Celup",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0183_celup.jpg",
+      "width": 638,
+      "height": 479,
+      "motif": "Celup",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Celup dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 184,
+    "filename": "hf_batik_0184_celup.jpg",
+    "title": "Batik Celup #185",
+    "category": "batik",
+    "label": "Celup",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0184_celup.jpg",
+      "width": 2400,
+      "height": 3760,
+      "motif": "Celup",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Celup dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 185,
+    "filename": "hf_batik_0185_celup.jpg",
+    "title": "Batik Celup #186",
+    "category": "batik",
+    "label": "Celup",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0185_celup.jpg",
+      "width": 1600,
+      "height": 1200,
+      "motif": "Celup",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Celup dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 186,
+    "filename": "hf_batik_0186_celup.jpg",
+    "title": "Batik Celup #187",
+    "category": "batik",
+    "label": "Celup",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0186_celup.jpg",
+      "width": 315,
+      "height": 341,
+      "motif": "Celup",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Celup dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 187,
+    "filename": "hf_batik_0187_celup.jpg",
+    "title": "Batik Celup #188",
+    "category": "batik",
+    "label": "Celup",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0187_celup.jpg",
+      "width": 400,
+      "height": 550,
+      "motif": "Celup",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Celup dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 188,
+    "filename": "hf_batik_0188_celup.jpg",
+    "title": "Batik Celup #189",
+    "category": "batik",
+    "label": "Celup",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0188_celup.jpg",
+      "width": 1200,
+      "height": 1600,
+      "motif": "Celup",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Celup dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 189,
+    "filename": "hf_batik_0189_celup.jpg",
+    "title": "Batik Celup #190",
+    "category": "batik",
+    "label": "Celup",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0189_celup.jpg",
+      "width": 1200,
+      "height": 1600,
+      "motif": "Celup",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Celup dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 190,
+    "filename": "hf_batik_0190_celup.jpg",
+    "title": "Batik Celup #191",
+    "category": "batik",
+    "label": "Celup",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0190_celup.jpg",
+      "width": 320,
+      "height": 214,
+      "motif": "Celup",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Celup dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 191,
+    "filename": "hf_batik_0191_celup.jpg",
+    "title": "Batik Celup #192",
+    "category": "batik",
+    "label": "Celup",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0191_celup.jpg",
+      "width": 736,
+      "height": 985,
+      "motif": "Celup",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Celup dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 192,
+    "filename": "hf_batik_0192_celup.jpg",
+    "title": "Batik Celup #193",
+    "category": "batik",
+    "label": "Celup",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0192_celup.jpg",
+      "width": 1280,
+      "height": 768,
+      "motif": "Celup",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Celup dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 193,
+    "filename": "hf_batik_0193_celup.jpg",
+    "title": "Batik Celup #194",
+    "category": "batik",
+    "label": "Celup",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0193_celup.jpg",
+      "width": 500,
+      "height": 375,
+      "motif": "Celup",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Celup dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 194,
+    "filename": "hf_batik_0194_celup.jpg",
+    "title": "Batik Celup #195",
+    "category": "batik",
+    "label": "Celup",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0194_celup.jpg",
+      "width": 400,
+      "height": 300,
+      "motif": "Celup",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Celup dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 195,
+    "filename": "hf_batik_0195_celup.jpg",
+    "title": "Batik Celup #196",
+    "category": "batik",
+    "label": "Celup",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0195_celup.jpg",
+      "width": 400,
+      "height": 550,
+      "motif": "Celup",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Celup dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 196,
+    "filename": "hf_batik_0196_celup.jpg",
+    "title": "Batik Celup #197",
+    "category": "batik",
+    "label": "Celup",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0196_celup.jpg",
       "width": 400,
       "height": 400,
-      "description": "Motif sulur daun dan bunga ukiran kayu jati Jepara",
-      "source": "dummy_dataset_curated"
+      "motif": "Celup",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Celup dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 197,
+    "filename": "hf_batik_0197_celup.jpg",
+    "title": "Batik Celup #198",
+    "category": "batik",
+    "label": "Celup",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0197_celup.jpg",
+      "width": 735,
+      "height": 497,
+      "motif": "Celup",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Celup dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 198,
+    "filename": "hf_batik_0198_celup.jpg",
+    "title": "Batik Celup #199",
+    "category": "batik",
+    "label": "Celup",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0198_celup.jpg",
+      "width": 686,
+      "height": 514,
+      "motif": "Celup",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Celup dari koleksi dataset Batik Indonesia."
+    }
+  },
+  {
+    "id": 199,
+    "filename": "hf_batik_0199_celup.jpg",
+    "title": "Batik Celup #200",
+    "category": "batik",
+    "label": "Celup",
+    "metadata": {
+      "path": "/home/titan/project/visual-ip-checker/backend/data/reference_images/hf_batik_0199_celup.jpg",
+      "width": 600,
+      "height": 315,
+      "motif": "Celup",
+      "source": "muhammadsalmanalfaridzi/Batik-Indonesia",
+      "split": "train",
+      "license_notice": "Riset non-komersial / Proof of Concept (PRD Sec 7.1)",
+      "description": "Motif batik tradisional Celup dari koleksi dataset Batik Indonesia."
     }
   }
 ]
