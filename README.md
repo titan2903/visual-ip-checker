@@ -1,157 +1,202 @@
-# Tarum — Visual IP Checker (Backend Core - Fase 1)
+# Tarum — Visual IP Screening untuk Pelaku Kriya & Fashion
 
-Tarum adalah alat screening awal kemiripan visual desain untuk pelaku UMKM kriya dan fashion. Sistem mengecek kemiripan visual motif/pola (batik, tenun, kerajinan) menggunakan model pretrained image embedding (**CLIP ViT-B/32**) dan pencarian vektor berkecepatan tinggi (**FAISS**).
+Tarum adalah instrumen screening awal kemiripan visual desain berbasis *deep learning* untuk pelaku UMKM kriya dan fashion (batik, tenun, anyaman, kerajinan kayu, dan kulit). Sistem mendeteksi potensi kemiripan motif secara visual menggunakan model pretrained **CLIP ViT-B/32** dan pencarian vektor berkecepatan tinggi **FAISS** sebelum produk didaftarkan ke HKI (PDKI) atau diproduksi massal.
 
 ---
 
-## 📁 Struktur Direktori
+## 🌟 Fitur Utama
+
+- **Pencarian Kemiripan Visual**: Mengekstraksi fitur semantik motif (bukan teks kata kunci) menggunakan model Vision Transformer (CLIP).
+- **Hasil & Penilaian Objektif**: Menampilkan skor kemiripan 0.0% – 100.0% dan 5 karya pembanding paling mirip ber-thumbnail.
+- **Kategorisasi Risiko Tiga Tingkat**:
+  - `Cukup Orisinal` (< 50%): Disarankan lanjut ke pendaftaran HKI.
+  - `Perlu Ditinjau` (50% – 74.99%): Disarankan modifikasi elemen tertentu.
+  - `Sangat Mirip` (≥ 75%): Risiko tinggi penolakan/somasi, disarankan revisi menyeluruh.
+- **UI/UX Presisi Instrumen**: Mengikuti *Token System* PRD Section 8.1 (Palet Paper, Ink, Indigo Tarum, Line Grey, Signal Amber) dengan layout asimetris 40/60.
+- **100% Berjalan Lokal & Hemat Biaya**: Tidak membutuhkan API key pihak ketiga berbayar dan dapat berjalan cepat di CPU laptop/server standar.
+- **CI/CD Otomatis Terpisah**: Workflow GitHub Actions terpisah untuk deployment backend (Heroku) dan frontend (Vercel).
+
+---
+
+## 📁 Struktur Direktori Proyek
 
 ```text
 visual-ip-checker/
+├── .github/
+│   └── workflows/
+│       ├── backend-deploy.yml         # CI/CD Backend ke Heroku
+│       └── frontend-deploy.yml        # CI/CD Frontend ke Vercel
 ├── backend/
 │   ├── app/
 │   │   ├── api/
-│   │   │   └── routes.py              # Endpoint API (POST /check, GET /health, GET /)
+│   │   │   └── routes.py              # Endpoint API (POST /check, GET /health)
 │   │   ├── services/
-│   │   │   ├── embedding_service.py   # Ekstraksi fitur CLIP ViT-B/32 (sentence-transformers)
-│   │   │   └── search_service.py      # Pencarian vektor FAISS & kalkulasi skor kemiripan
+│   │   │   ├── embedding_service.py   # Ekstraksi fitur CLIP (sentence-transformers)
+│   │   │   └── search_service.py      # Pencarian vektor FAISS & kalkulasi skor
 │   │   ├── schemas/
-│   │   │   └── check.py               # Skema Pydantic request & response
-│   │   ├── config.py                  # Konfigurasi path, batas upload, & threshold risiko
+│   │   │   └── check.py               # Schema Pydantic request & response
+│   │   ├── config.py                  # Konfigurasi aplikasi & load .env
 │   │   └── main.py                    # Entrypoint FastAPI & static file mounting
 │   ├── data/
 │   │   ├── reference_images/          # Dataset gambar referensi produk/motif
-│   │   └── index/                     # File FAISS (index.faiss & metadata.json)
+│   │   └── index/                     # File biner index.faiss & metadata.json
 │   ├── scripts/
-│   │   ├── create_dummy_data.py       # Generator 12 gambar motif dummy kriya & fashion
-│   │   └── build_index.py             # Script pembangun indeks FAISS dari dataset
+│   │   ├── create_dummy_data.py       # Generator 12 motif kriya dummy
+│   │   └── build_index.py             # Script pembangun indeks FAISS
 │   ├── tests/
-│   │   └── test_api.py                # Unit & integration tests
-│   └── requirements.txt
-├── frontend/                          # Folder terpisah untuk React + Vite (Fase 2)
-│   └── README.md
-├── PRD.md                             # Dokumen PRD lengkap
-├── PROMPT_PHASE1.md                   # Instruksi spesifikasi Fase 1
-└── README.md                          # Panduan eksekusi lokal
+│   │   └── test_api.py                # Test suite pytest (7 skenario)
+│   ├── .env                           # Konfigurasi environment backend lokal
+│   ├── .env.example                   # Template konfigurasi backend
+│   ├── .gitignore                     # Git ignore khusus backend
+│   ├── Procfile                       # Heroku process file untuk subfolder backend
+│   ├── runtime.txt                    # Versi Python Heroku
+│   └── requirements.txt               # Dependensi Python
+├── frontend/
+│   ├── src/
+│   │   ├── App.jsx                    # Komponen utama React & alur pemeriksaan
+│   │   ├── App.css                    # Styling layout asimetris 40/60
+│   │   ├── index.css                  # Token warna, tipografi, & tekstur tenun
+│   │   └── main.jsx                   # Entrypoint React
+│   ├── .env                           # Konfigurasi environment frontend lokal
+│   ├── .env.example                   # Template konfigurasi frontend
+│   ├── .gitignore                     # Git ignore khusus frontend
+│   ├── vercel.json                    # Konfigurasi SPA routing & build Vercel
+│   ├── vite.config.js                 # Konfigurasi proxy API Vite
+│   └── package.json                   # Dependensi React & Vite
+├── Procfile                           # Heroku process file di root
+├── runtime.txt                        # Versi Python (3.12.8) untuk Heroku
+├── .gitignore                         # Git ignore root
+├── PRD.md                             # Dokumen Product Requirement Document
+├── PROMPT_PHASE1.md                   # Spesifikasi teknis Fase 1 (Backend Core)
+├── PROMPT_PHASE2.md                   # Spesifikasi teknis Fase 2 (Frontend UI)
+└── README.md                          # Dokumentasi utama proyek ini
 ```
 
 ---
 
 ## 🚀 Panduan Menjalankan Secara Lokal
 
-### 1. Prasyarat
-- Python 3.10+ (direkomendasikan Python 3.12)
-- Package manager: `uv` (sangat cepat) atau `pip` bawaan
-
-### 2. Setup Virtual Environment & Install Dependensi
-
-```bash
-# Buat virtual environment
-uv venv .venv
-# atau: python3 -m venv .venv
-
-# Aktifkan virtual environment
-source .venv/bin/activate
-
-# Install dependensi
-uv pip install -r backend/requirements.txt
-# atau: pip install -r backend/requirements.txt
-```
-
-### 3. Siapkan Dataset Referensi & Bangun Indeks FAISS
-
-Jika belum memiliki dataset asli, buat 12 gambar sintetis motif kriya/fashion untuk pengujian:
-
-```bash
-python backend/scripts/create_dummy_data.py
-```
-
-> **Catatan:** Anda dapat menambahkan gambar motif asli Anda kapan saja ke dalam folder `backend/data/reference_images/`.
-
-Setelah gambar tersedia, bangun indeks vektor FAISS:
-
-```bash
-python backend/scripts/build_index.py
-```
-*Output: `backend/data/index/index.faiss` dan `backend/data/index/metadata.json`.*
-
-### 4. Jalankan Server FastAPI
-
-```bash
-uvicorn backend.app.main:app --reload --host 0.0.0.0 --port 8000
-```
-
-Aplikasi akan berjalan di:
-- **API Base URL**: [http://localhost:8000](http://localhost:8000)
-- **Dokumentasi Interaktif (Swagger UI)**: [http://localhost:8000/docs](http://localhost:8000/docs)
-- **Health Check**: [http://localhost:8000/health](http://localhost:8000/health)
+### 1. Prasyarat Sistem
+- **Python**: versi 3.10 ke atas (diuji pada Python 3.12)
+- **Node.js**: versi 18 ke atas (diuji pada Node.js 20/22)
+- Package manager Python: `uv` (sangat direkomendasikan) atau `pip` bawaan
 
 ---
 
-## 🧪 Menguji Endpoint `POST /check`
+### 2. Menjalankan Backend (FastAPI)
 
-### Menggunakan `curl`:
-```bash
-curl -X POST "http://localhost:8000/check" \
-  -H "accept: application/json" \
-  -H "Content-Type: multipart/form-data" \
-  -F "file=@backend/data/reference_images/batik_parang_01.jpg"
-```
+1. **Buat dan aktifkan Virtual Environment**:
+   ```bash
+   uv venv .venv
+   source .venv/bin/activate
+   ```
 
-### Contoh Respon JSON:
-```json
-{
-  "status": "success",
-  "query": {
-    "filename": "batik_parang_01.jpg",
-    "content_type": "image/jpeg",
-    "size_bytes": 62450
-  },
-  "max_similarity_score": 100.0,
-  "risk_level": "Sangat Mirip",
-  "recommendation": "Desain memiliki kemiripan visual tinggi dengan karya referensi. Sangat disarankan untuk merevisi motif atau elemen spesifik dan berkonsultasi mengenai HKI sebelum produksi massal.",
-  "results": [
-    {
-      "rank": 1,
-      "id": 0,
-      "filename": "batik_parang_01.jpg",
-      "image_url": "/static/reference_images/batik_parang_01.jpg",
-      "title": "Batik Parang Rusak Klasik",
-      "category": "batik",
-      "similarity_score": 100.0,
-      "risk_level": "Sangat Mirip",
-      "metadata": {
-        "description": "Motif parang diagonal soga cokelat tradisional Surakarta",
-        "source": "dummy_dataset_curated"
-      }
-    }
-  ],
-  "disclaimer": "Ini bukan opini hukum. Hasil ini membantu kamu memutuskan langkah berikutnya, bukan menggantikan konsultasi HKI resmi.",
-  "execution_time_ms": 112.4
-}
-```
+2. **Install Dependensi Backend**:
+   ```bash
+   uv pip install -r backend/requirements.txt
+   # atau: pip install -r backend/requirements.txt
+   ```
+
+3. **Buat Gambar Dummy & Bangun Indeks FAISS**:
+   ```bash
+   # Buat 12 sampel motif dummy (jika belum memiliki dataset motif asli)
+   python backend/scripts/create_dummy_data.py
+
+   # Bangun indeks vektor FAISS
+   python backend/scripts/build_index.py
+   ```
+   *(Anda juga dapat menambahkan gambar motif asli ke dalam folder `backend/data/reference_images/`)*.
+
+4. **Jalankan Server FastAPI**:
+   ```bash
+   uvicorn backend.app.main:app --reload --host 0.0.0.0 --port 8000
+   ```
+   - Swagger UI: [http://localhost:8000/docs](http://localhost:8000/docs)
+   - Health Check: [http://localhost:8000/health](http://localhost:8000/health)
 
 ---
 
-## ⚙️ Menjalankan Automated Tests
+### 3. Menjalankan Frontend (React + Vite)
 
-Jalankan pengujian end-to-end dengan pytest:
+Buka terminal baru:
+
+1. **Masuk ke folder frontend & install dependensi**:
+   ```bash
+   cd frontend
+   npm install
+   ```
+
+2. **Jalankan Vite Dev Server**:
+   ```bash
+   npm run dev
+   ```
+   - Buka di browser: **[http://localhost:5173](http://localhost:5173)**
+   - Frontend sudah terhubung secara otomatis ke backend port `8000` via proxy Vite (`/api`).
+
+---
+
+## ⚙️ Konfigurasi Environment (`.env`)
+
+### Backend (`backend/.env`)
+| Variabel | Default | Keterangan |
+|---|---|---|
+| `TARUM_MODEL_NAME` | `clip-ViT-B-32` | Model CLIP via sentence-transformers |
+| `TARUM_HOST` | `0.0.0.0` | Host binding server FastAPI |
+| `TARUM_PORT` | `8000` | Port listening server |
+| `TARUM_CORS_ORIGINS` | `http://localhost:5173,...` | Daftar origin yang diizinkan CORS |
+| `TARUM_MAX_UPLOAD_SIZE_MB` | `5.0` | Batas maksimum ukuran file unggahan (MB) |
+| `TARUM_DEFAULT_TOP_K` | `5` | Jumlah karya pembanding yang diambil |
+| `TARUM_RISK_THRESHOLD_LOW` | `50.0` | Ambang batas kategori *Cukup Orisinal* |
+| `TARUM_RISK_THRESHOLD_HIGH` | `75.0` | Ambang batas kategori *Sangat Mirip* |
+
+### Frontend (`frontend/.env`)
+| Variabel | Default | Keterangan |
+|---|---|---|
+| `VITE_API_BASE_URL` | *kosong* | Kosong untuk proxy internal Vite; isi URL backend jika terpisah |
+| `VITE_APP_TITLE` | `Tarum — Visual IP Screening` | Judul aplikasi pada UI |
+| `VITE_MAX_UPLOAD_SIZE_MB` | `5` | Batasan validasi ukuran file di sisi browser |
+| `VITE_PDKI_URL` | `https://pdki-indonesia.dgip.go.id` | Tautan portal resmi HKI DJKI |
+
+---
+
+## 🧪 Pengujian & Quality Assurance
+
+### Menjalankan Test Suite Backend:
 ```bash
-pytest backend/tests/ -v
+# Dari root direktori proyek
+PYTHONPATH=. pytest -p no:launch_testing backend/tests/ -v
+```
+*Menguji 7 skenario: endpoint root, health check, static file thumbnail, kalkulasi kemiripan valid, validasi ekstensi tidak sah, validasi file rusak, dan penolakan file > 5MB.*
+
+### Menguji Build Frontend:
+```bash
+cd frontend
+npm run build
 ```
 
 ---
 
-## 📌 Asumsi Teknis (Technical Decisions)
+## 🚢 CI/CD & Deployment Otomatis
 
-1. **Model Embedding**: Menggunakan `clip-ViT-B-32` via `sentence-transformers` sesuai PRD Section 7. Model ini bekerja sangat baik di CPU maupun GPU dan memiliki latensi inferensi cepat (< 150ms per gambar).
-2. **Normalisasi Vektor & Indeks FAISS**:
-   - Vektor embedding dinormalisasi L2 ($\|v\| = 1$).
-   - FAISS dibangun dengan `IndexFlatIP` (Inner Product). Pada vektor yang dinormalisasi, inner product ekuivalen dengan Cosine Similarity ($S = \cos\theta$).
-   - Formula konversi skor: $\text{Skor Persentase} = \max(0, \min(100, S \times 100))$.
-3. **Threshold Risiko Kemiripan**:
-   - **Skor < 50.0%**: *Cukup Orisinal*
-   - **50.0% ≤ Skor < 75.0%**: *Perlu Ditinjau*
-   - **Skor ≥ 75.0%**: *Sangat Mirip*
-4. **Validasi File**: Maksimal 5 MB dengan format JPEG, PNG, atau WEBP sesuai *Must Have* PRD Section 6.
-5. **Static File Serving**: Gambar referensi disajikan melalui `/static/reference_images/` agar frontend dapat langsung merender thumbnail karya pembanding.
+Proyek ini telah dilengkapi dengan GitHub Actions yang otomatis berjalan ketika ada perubahan di-push ke branch utama (`main` / `master`):
+
+1. **Backend Deploy to Heroku** ([`.github/workflows/backend-deploy.yml`](.github/workflows/backend-deploy.yml)):
+   - Menjalankan test suite `pytest` terlebih dahulu.
+   - Jika tes lulus, deploy ke Heroku menggunakan `Procfile` dan `runtime.txt`.
+   - *GitHub Secrets*: `HEROKU_API_KEY`, `HEROKU_APP_NAME`, `HEROKU_EMAIL`.
+
+2. **Frontend Deploy to Vercel** ([`.github/workflows/frontend-deploy.yml`](.github/workflows/frontend-deploy.yml)):
+   - Menjalankan pengujian build bundle Vite.
+   - Melakukan rilis produksi ke Vercel via CLI resmi.
+   - *GitHub Secrets*: `VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID`.
+
+---
+
+## 📌 Asumsi Teknis & Dasar Validasi
+
+1. **Model Machine Learning**: Menggunakan model **CLIP ViT-B/32** (Contrastive Language-Image Pre-training) yang mengekstraksi 512 dimensi vektor visual laten ternormalisasi ($L_2\text{-norm} = 1$).
+2. **Kalkulasi Kemiripan**: Menggunakan **Cosine Similarity** via **FAISS IndexFlatIP**:
+   $$\text{Skor Kemiripan (\%)} = \text{clamp}((\mathbf{u} \cdot \mathbf{v}) \times 100.0, 0.0, 100.0)$$
+3. **Pernyataan Hukum (Legal Disclaimer)**:
+   > *"Ini bukan opini hukum. Hasil ini membantu kamu memutuskan langkah berikutnya, bukan menggantikan konsultasi HKI resmi."*
+   Alat ini adalah instrumen screening awal mandiri untuk memberikan bukti pembanding visual bagi pengrajin UMKM kriya sebelum mengajukan Desain Industri atau Hak Cipta ke DJKI.
