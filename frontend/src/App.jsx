@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+import tarumLogo from './assets/tarum.svg'
 import './App.css'
 
 // Environment configurations from .env (prefixed with VITE_)
@@ -204,8 +205,11 @@ export default function App() {
       {/* Masthead Header */}
       <header className="masthead">
         <div className="brand-block">
-          <span className="brand-title">Tarum</span>
-          <span className="brand-tagline">Instrumen verifikasi kemiripan visual kriya & fashion</span>
+          <img src={tarumLogo} alt="Tarum Logo" className="brand-logo" />
+          <div className="brand-text-group">
+            <span className="brand-title">Tarum</span>
+            <span className="brand-tagline">Instrumen verifikasi kemiripan visual kriya & fashion</span>
+          </div>
         </div>
         <div className="system-status">
           <span className={`status-dot ${systemHealth.online ? '' : 'offline'}`}></span>
@@ -391,9 +395,7 @@ export default function App() {
           {!isLoading && !checkResult && (
             <div className="empty-state">
               <div className="empty-state-canvas">
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
+                <img src={tarumLogo} alt="Tarum Logo" className="empty-state-icon" />
               </div>
               <div className="empty-state-title">Belum ada desain yang diperiksa</div>
               <p className="empty-state-desc">

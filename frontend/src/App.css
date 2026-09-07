@@ -28,16 +28,32 @@
 
 .brand-block {
   display: flex;
-  align-items: baseline;
-  gap: 12px;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  object-fit: contain;
+  border: 1px solid var(--color-line);
+  background-color: var(--color-paper-contrast);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.brand-text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .brand-title {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 700;
   color: var(--color-indigo);
   letter-spacing: -0.03em;
-  line-height: 1;
+  line-height: 1.1;
 }
 
 .brand-tagline {
@@ -400,13 +416,23 @@
 }
 
 .empty-state-canvas {
-  width: 90px;
-  height: 90px;
-  border: 1px dashed var(--color-line-darker);
+  width: 96px;
+  height: 96px;
+  border: 1px solid var(--color-line);
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-ink-muted);
+  padding: 10px;
+  background-color: var(--color-paper-contrast);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+}
+
+.empty-state-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 6px;
 }
 
 .empty-state-title {
