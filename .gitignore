@@ -15,6 +15,7 @@ build/
 .env.local
 .env.*.local
 !.env.example
+outputs/
 
 # Reference dataset downloads
 backend/data/reference_images/hf_batik_*
