@@ -76,7 +76,8 @@ app.mount(
     name="reference_images",
 )
 
-# Include API routes
+# Include API routes (both with /api prefix for production frontend and root for compatibility)
+app.include_router(api_router, prefix="/api")
 app.include_router(api_router)
 
 

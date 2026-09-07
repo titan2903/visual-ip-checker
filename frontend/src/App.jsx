@@ -173,6 +173,13 @@ export default function App() {
     return 'low-risk'
   }
 
+  // Helper untuk resolve URL gambar statis dari backend saat deploy di Vercel
+  const resolveImageUrl = (url) => {
+    if (!url) return ''
+    if (url.startsWith('http://') || url.startsWith('https://')) return url
+    return `${API_BASE_URL}${url}`
+  }
+
   return (
     <div className="app-wrapper">
       {/* Masthead Header */}
@@ -399,7 +406,7 @@ export default function App() {
                   <div key={item.id} className="comparison-card" tabIndex={0}>
                     <div className="thumb-wrapper">
                       <img
-                        src={item.image_url}
+                        src={resolveImageUrl(item.image_url)}
                         alt={item.title || item.filename}
                         className="thumb-image"
                         onError={(e) => {
