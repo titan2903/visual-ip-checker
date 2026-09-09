@@ -3,7 +3,7 @@ name: Deploy Frontend to Vercel
 on:
   push:
     branches:
-      - master # jika sudah siap setup, ganti jadi main
+      - main
     paths:
       - "frontend/**"
       - ".github/workflows/frontend-deploy.yml"
