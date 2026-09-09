@@ -1,11 +1,8 @@
---extra-index-url https://download.pytorch.org/whl/cpu
-torch==2.14.0+cpu
 fastapi>=0.115.0
 uvicorn[standard]>=0.30.0
 python-multipart>=0.0.12
 pillow>=10.4.0
 numpy>=1.26.0
-sentence-transformers>=3.0.0
 faiss-cpu>=1.8.0
 pydantic>=2.8.0
 pytest>=8.0.0

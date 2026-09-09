@@ -1,6 +1,6 @@
 # Tarum — Backend API & Core Pipeline
 
-Layanan backend untuk **Tarum (Visual IP Checker)** yang bertugas melakukan inferensi embedding visual desain kriya/fashion menggunakan model **CLIP ViT-B/32** (dioptimasi menggunakan PyTorch Dynamic Quantization untuk efisiensi RAM) dan pencarian kemiripan vektor menggunakan **FAISS**.
+Layanan backend untuk **Tarum (Visual IP Checker)** yang bertugas melakukan inferensi embedding visual desain kriya/fashion menggunakan **Hugging Face Inference API** (model **CLIP ViT-B/32**) dan pencarian kemiripan vektor menggunakan **FAISS**.
 
 ---
 
@@ -205,9 +205,8 @@ Menyajikan file gambar referensi yang tersimpan di server secara statis sehingga
 
 ## ⚙️ Logika Teknis & Kalkulasi Skor
 
-1. **Ekstraksi Embedding**:
-   - Model `clip-ViT-B-32` via `sentence-transformers` menghasilkan vektor fitur berdimensi 512.
-   - Model dikuantisasi secara dinamis (PyTorch Dynamic Quantization ke `qint8`) saat berjalan untuk menghemat RAM (ideal untuk tier Heroku Basic/Eco).
+   - Mengirim request gambar via HTTP POST ke **Hugging Face Inference API** (`clip-ViT-B-32`).
+   - Server mengembalikan vektor fitur berdimensi 512.
    - Vektor secara eksplisit dinormalisasi ke satuan L2 norm ($\|v\|_2 = 1.0$).
 
 2. **Perhitungan Skor Kemiripan (%)**:

@@ -27,6 +27,7 @@ INDEX_DIR.mkdir(parents=True, exist_ok=True)
 # Default CLIP ViT-B/32 via sentence-transformers as specified in PRD Section 7
 MODEL_NAME = os.getenv("TARUM_MODEL_NAME", "clip-ViT-B-32")
 EMBEDDING_DIM = 512
+HUGGINGFACE_API_KEY = os.getenv("HUGGINGFACE_API_KEY", "")
 
 # Hugging Face Dataset (PRD Section 7 & 7.1)
 HF_DATASET_NAME = os.getenv(

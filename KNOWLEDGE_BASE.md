@@ -117,11 +117,11 @@ Proyek ini divalidasi langsung bersama mitra perajin kriya tekstil:
 
 ## 4. Machine Learning & Algoritma Kemiripan
 
-### 4.1 Pemilihan Model: CLIP ViT-B/32 (PyTorch Dynamic Quantized)
+### 4.1 Pemilihan Model: CLIP ViT-B/32 (Hugging Face Inference API)
 
-Model yang digunakan adalah **OpenAI CLIP (Contrastive Language-Image Pre-training)** varian **ViT-B/32** yang dimuat melalui library `sentence-transformers`:
+Model yang digunakan adalah **OpenAI CLIP (Contrastive Language-Image Pre-training)** varian **ViT-B/32** yang diakses melalui cloud API:
 - **Alasan Visual**: Mampu merepresentasikan tekstur, bentuk (parang, kawung, mega mendung), dan perulangan pola kriya ke dalam dimensi vektor matematika dengan presisi tinggi.
-- **Kinerja dan Optimasi Memori**: Model ini menggunakan **PyTorch Dynamic Quantization (QInt8)** pada layer *Linear*, yang memotong penggunaan memori RAM (dari ~800MB menjadi ~350MB) di lingkungan *cloud* CPU-only seperti Heroku (menghindari error R14/R15).
+- **Kinerja dan Optimasi Memori**: Model ini menggunakan **Hugging Face Inference API** via panggilan HTTP POST, yang secara efektif memangkas penggunaan memori RAM server dari ~1GB menjadi ~100MB di lingkungan *cloud* seperti Heroku (menghindari error R14/R15).
 - **Dimensi**: Menghasilkan 512-dimensi feature vector yang sangat cepat diindeks oleh FAISS.
 
 ### 4.2 Formulasi Matematika Pencocokan Vektor

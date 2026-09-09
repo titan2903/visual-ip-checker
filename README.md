@@ -215,7 +215,7 @@ Proyek ini telah dilengkapi dengan GitHub Actions yang otomatis berjalan ketika 
 
 ## 📌 Asumsi Teknis & Dasar Validasi
 
-1. **Model Machine Learning**: Menggunakan model **CLIP ViT-B/32** (Contrastive Language-Image Pre-training) yang diekstraksi ke 512 dimensi vektor visual laten ternormalisasi ($L_2\text{-norm} = 1$). Model ini dioptimasi dengan **PyTorch Dynamic Quantization** untuk memotong konsumsi memori RAM.
+1. **Model Machine Learning**: Menggunakan model **CLIP ViT-B/32** (Contrastive Language-Image Pre-training) yang diekstraksi ke 512 dimensi vektor visual laten ternormalisasi ($L_2\text{-norm} = 1$). Ekstraksi dilakukan secara cloud melalui **Hugging Face Inference API** untuk menghemat konsumsi memori RAM server.
 2. **Kalkulasi Kemiripan**: Menggunakan **Cosine Similarity** via **FAISS IndexFlatIP**:
    $$\text{Skor Kemiripan (\%)} = \text{clamp}((\mathbf{u} \cdot \mathbf{v}) \times 100.0, 0.0, 100.0)$$
 3. **Pernyataan Hukum (Legal Disclaimer)**:
