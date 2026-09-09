@@ -17,6 +17,7 @@ Proyek ini divalidasi menggunakan studi kasus nyata dari mitra perajin kriya lok
   - **Kecepatan**: Waktu skrining kemiripan visual selesai dalam **< 5 detik**.
   - **Efisiensi Finansial**: Biaya validasi awal ditekan dari jutaan rupiah menjadi **Rp 0 (100% mandiri)**.
   - **Nir-Sengketa (*Zero Dispute*)**: Mencegah pemborosan modal bahan baku (*sunk cost*) sebelum kain dicap/dicanting secara massal.
+- **Dokumentasi Produk**: Spesifikasi teknis, persona, dan arah desain lengkap dapat dilihat di [**`PRD.md`**](PRD.md).
 
 ---
 
@@ -82,7 +83,8 @@ visual-ip-checker/
 ├── Procfile                           # Heroku process file di root
 ├── runtime.txt                        # Versi Python (3.12.8) untuk Heroku
 ├── .gitignore                         # Git ignore root
-├── PRD.md                             # Dokumen Product Requirement Document
+├── ARCHITECTURE.md                    # Dokumen Arsitektur Sistem
+├── PRD.md                             # [PRD.md](PRD.md) - Dokumen Product Requirement Document
 ├── PROMPT_PHASE1.md                   # Spesifikasi teknis Fase 1 (Backend Core)
 ├── PROMPT_PHASE2.md                   # Spesifikasi teknis Fase 2 (Frontend UI)
 └── README.md                          # Dokumentasi utama proyek ini
@@ -218,3 +220,10 @@ Proyek ini telah dilengkapi dengan GitHub Actions yang otomatis berjalan ketika 
 3. **Pernyataan Hukum (Legal Disclaimer)**:
    > *"Ini bukan opini hukum. Hasil ini membantu kamu memutuskan langkah berikutnya, bukan menggantikan konsultasi HKI resmi."*
    Alat ini adalah instrumen screening awal mandiri untuk memberikan bukti pembanding visual bagi pengrajin UMKM kriya sebelum mengajukan Desain Industri atau Hak Cipta ke DJKI.
+
+---
+
+## 📚 Dokumen Spesifikasi & Terkait
+
+- 📄 [**PRD.md**](PRD.md) — Product Requirement Document (spesifikasi fungsional, persona Datik Batik, & token desain UI/UX).
+- 🏗️ [**ARCHITECTURE.md**](ARCHITECTURE.md) — Dokumen arsitektur teknis sistem dan integrasi service.
