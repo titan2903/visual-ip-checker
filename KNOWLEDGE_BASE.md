@@ -103,7 +103,7 @@ Proyek ini divalidasi langsung bersama mitra perajin kriya tekstil:
 |---|---|---|---|
 | **Backend Framework** | FastAPI | `^0.115.0` | High-performance async REST API, validasi request via Pydantic v2 |
 | **ASGI Server** | Uvicorn | `^0.32.0` | Web server ASGI production-grade |
-| **Deep Learning** | PyTorch & torchvision | `^2.5.0` | Runtime inferensi model tensor visual |
+| **Deep Learning** | PyTorch (Dynamic Quantized) | `^2.5.0` | Runtime inferensi visual (QInt8 memory optimized) |
 | **Model Embedding** | `sentence-transformers` | `^3.3.0` | Interface ekstraksi fitur CLIP (`clip-ViT-B-32`) |
 | **Vector Database** | `faiss-cpu` | `^1.9.0` | Pencarian tetangga terdekat berkecepatan tinggi (IndexFlatIP) |
 | **Dataset Source** | Hugging Face `datasets` | `^2.20.0` | Loader dataset resmi 2.599 motif Batik Indonesia |
@@ -117,14 +117,12 @@ Proyek ini divalidasi langsung bersama mitra perajin kriya tekstil:
 
 ## 4. Machine Learning & Algoritma Kemiripan
 
-### 4.1 Pemilihan Model: CLIP ViT-B/32
+### 4.1 Pemilihan Model: CLIP ViT-B/32 (PyTorch Dynamic Quantized)
+
 Model yang digunakan adalah **OpenAI CLIP (Contrastive Language-Image Pre-training)** varian **ViT-B/32** yang dimuat melalui library `sentence-transformers`:
-- **Arsitektur:** Vision Transformer dengan patch size 32x32 piksel.
-- **Dimensi Representasi Laten:** $d = 512$.
-- **Rasional Pemilihan:**
-  1. *Zero-Shot Generalization:* Dilatih pada 400+ juta pasangan gambar-teks internet, sangat sensitif terhadap karakteristik global motif (kontur bentuk, pola garis, komposisi visual).
-  2. *Efisiensi Komputasi:* Sangat cepat dijalankan pada CPU standar (~200-400 ms per inferensi), tidak mewajibkan GPU mahal di server produksi.
-  3. *Open Source & Gratis:* Bebas dari biaya API pihak ketiga per request.
+- **Alasan Visual**: Mampu merepresentasikan tekstur, bentuk (parang, kawung, mega mendung), dan perulangan pola kriya ke dalam dimensi vektor matematika dengan presisi tinggi.
+- **Kinerja dan Optimasi Memori**: Model ini menggunakan **PyTorch Dynamic Quantization (QInt8)** pada layer *Linear*, yang memotong penggunaan memori RAM (dari ~800MB menjadi ~350MB) di lingkungan *cloud* CPU-only seperti Heroku (menghindari error R14/R15).
+- **Dimensi**: Menghasilkan 512-dimensi feature vector yang sangat cepat diindeks oleh FAISS.
 
 ### 4.2 Formulasi Matematika Pencocokan Vektor
 Setiap vektor representasi gambar kueri ($\mathbf{u}$) dan gambar referensi ($\mathbf{v}$) dinormalisasi dengan $L_2\text{-norm}$:

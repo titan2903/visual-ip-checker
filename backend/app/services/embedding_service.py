@@ -23,7 +23,12 @@ class EmbeddingService:
         if EmbeddingService._model is None:
             logger.info(f"Loading CLIP model: {model_name}...")
             # SentenceTransformer clip-ViT-B-32 handles both text and images
-            EmbeddingService._model = SentenceTransformer(model_name)
+            import torch
+            model = SentenceTransformer(model_name)
+            # Apply dynamic quantization to reduce memory footprint on CPU (Heroku)
+            EmbeddingService._model = torch.quantization.quantize_dynamic(
+                model, {torch.nn.Linear}, dtype=torch.qint8
+            )
             logger.info(f"CLIP model {model_name} loaded successfully.")
         self.model = EmbeddingService._model
 

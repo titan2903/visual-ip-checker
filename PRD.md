@@ -131,7 +131,7 @@ Prinsip: **jangan bangun ulang apa yang sudah ada.** Semua komponen inti pakai m
 ```
 
 **Stack yang disarankan (budget bootstrap-friendly):**
-- Embedding: `sentence-transformers` dengan model `clip-ViT-B-32` (gratis, jalan di CPU, tidak butuh GPU untuk skala demo).
+- Embedding: `sentence-transformers` dengan model `clip-ViT-B-32` (PyTorch Dynamic Quantized untuk efisiensi RAM).
 - Vector index: FAISS (in-memory, gratis) untuk demo; Supabase pgvector (tier gratis) kalau butuh persistence.
 - Backend: FastAPI, deploy di Render/Railway free tier.
 - Frontend: React + Vite atau Next.js, deploy di Vercel free tier.
