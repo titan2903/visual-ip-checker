@@ -3,7 +3,7 @@ name: Deploy Backend to Heroku
 on:
   push:
     branches:
-      - master # jika sudah siap setup, ganti jadi main
+      - main
     paths:
       - "backend/**"
       - "Procfile"
