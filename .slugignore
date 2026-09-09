@@ -1,0 +1,12 @@
+# Frontend (deployed separately on Vercel)
+frontend/
+
+# Development documents & outputs
+*.md
+outputs/
+
+# CI / GitHub workflows
+.github/
+
+# Backend tests (verified in CI prior to deployment)
+backend/tests/

@@ -9,6 +9,7 @@ on:
       - "Procfile"
       - "runtime.txt"
       - "requirements.txt"
+      - ".slugignore"
       - ".github/workflows/backend-deploy.yml"
   workflow_dispatch:
 
