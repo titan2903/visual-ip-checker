@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-echo "-----> Pre-downloading CLIP model..."
-python -c "
-from sentence_transformers import SentenceTransformer
-print('Downloading model to cache...')
-model = SentenceTransformer('clip-ViT-B-32')
-print('Model downloaded successfully!')
-"
