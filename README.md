@@ -17,7 +17,7 @@ Proyek ini divalidasi menggunakan studi kasus nyata dari mitra perajin kriya lok
   - **Kecepatan**: Waktu skrining kemiripan visual selesai dalam **< 5 detik**.
   - **Efisiensi Finansial**: Biaya validasi awal ditekan dari jutaan rupiah menjadi **Rp 0 (100% mandiri)**.
   - **Nir-Sengketa (*Zero Dispute*)**: Mencegah pemborosan modal bahan baku (*sunk cost*) sebelum kain dicap/dicanting secara massal.
-- **Dokumentasi Produk**: Spesifikasi teknis, persona, dan arah desain lengkap dapat dilihat di [**`PRD.md`**](PRD.md).
+- **Dokumentasi Produk & Teknis**: Spesifikasi kebutuhan produk mengacu pada [**`PRD.md`**](PRD.md), dan dokumentasi teknis komprehensif tersedia di [**`KNOWLEDGE_BASE.md`**](KNOWLEDGE_BASE.md).
 
 ---
 
@@ -84,6 +84,7 @@ visual-ip-checker/
 ├── runtime.txt                        # Versi Python (3.12.8) untuk Heroku
 ├── .gitignore                         # Git ignore root
 ├── ARCHITECTURE.md                    # Dokumen Arsitektur Sistem
+├── KNOWLEDGE_BASE.md                  # [KNOWLEDGE_BASE.md](KNOWLEDGE_BASE.md) - Single Source of Truth & Knowledge Base Proyek
 ├── PRD.md                             # [PRD.md](PRD.md) - Dokumen Product Requirement Document
 ├── PROMPT_PHASE1.md                   # Spesifikasi teknis Fase 1 (Backend Core)
 ├── PROMPT_PHASE2.md                   # Spesifikasi teknis Fase 2 (Frontend UI)
@@ -225,5 +226,6 @@ Proyek ini telah dilengkapi dengan GitHub Actions yang otomatis berjalan ketika 
 
 ## 📚 Dokumen Spesifikasi & Terkait
 
+- 🧠 [**KNOWLEDGE_BASE.md**](KNOWLEDGE_BASE.md) — Knowledge Base teknis komprehensif (*Single Source of Truth*: arsitektur, algoritma CLIP & FAISS, pipeline data, dan runbook operasional).
 - 📄 [**PRD.md**](PRD.md) — Product Requirement Document (spesifikasi fungsional, persona Datik Batik, & token desain UI/UX).
 - 🏗️ [**ARCHITECTURE.md**](ARCHITECTURE.md) — Dokumen arsitektur teknis sistem dan integrasi service.
