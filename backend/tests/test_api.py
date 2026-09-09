@@ -45,11 +45,26 @@ def test_health_endpoint(client: TestClient):
 
 
 def test_static_reference_image(client: TestClient):
-    from backend.app.services.search_service import SearchService
-    search_service = SearchService.get_instance()
+    import os
+    from backend.app.config import REFERENCE_IMAGES_DIR
+
+    # Cari file referensi yang benar-benar ada di disk runner CI
     filename = "batik_parang_01.jpg"
-    if search_service.metadata and len(search_service.metadata) > 0:
-        filename = search_service.metadata[0].get("filename", filename)
+    filepath = REFERENCE_IMAGES_DIR / filename
+
+    if not filepath.exists():
+        existing_images = [
+            f for f in os.listdir(REFERENCE_IMAGES_DIR)
+            if f.lower().endswith((".jpg", ".jpeg", ".png", ".webp"))
+        ]
+        if existing_images:
+            filename = existing_images[0]
+        else:
+            # Fallback aman jika direktori kosong pada runner CI/CD
+            from PIL import Image
+            fallback_img = Image.new("RGB", (64, 64), color=(100, 150, 200))
+            fallback_img.save(REFERENCE_IMAGES_DIR / "sample_test.jpg", format="JPEG")
+            filename = "sample_test.jpg"
 
     response = client.get(f"/static/reference_images/{filename}")
     assert response.status_code == 200
