@@ -3,7 +3,20 @@
 **Owner:** TITANIO YUDISTA  
 **Status:** Draft MVP (Submission EKRAF x Google Career Certificates)
 
-Tarum adalah instrumen screening awal kemiripan visual desain berbasis *deep learning* untuk pelaku UMKM kriya dan fashion (fokus MVP: **Batik Indonesia**). Sistem mendeteksi potensi kemiripan motif secara visual menggunakan model pretrained **CLIP ViT-B/32** dan pencarian vektor berkecepatan tinggi **FAISS** sebelum produk didaftarkan ke HKI (PDKI) atau diproduksi massal.
+Tarum adalah instrumen screening awal kemiripan visual desain berbasis *deep learning* untuk pelaku UMKM kriya dan fashion (fokus MVP: **Batik Indonesia**), divalidasi bersama mitra studi kasus **Datik Batik** (Tangerang Selatan). Sistem mendeteksi potensi kemiripan motif secara visual menggunakan model pretrained **CLIP ViT-B/32** dan pencarian vektor berkecepatan tinggi **FAISS** sebelum produk didaftarkan ke HKI (PDKI) atau diproduksi massal.
+
+---
+
+## 🎯 Studi Kasus Validasi: UMKM Datik Batik (Tangerang Selatan)
+
+Proyek ini divalidasi menggunakan studi kasus nyata dari mitra perajin kriya lokal:
+- **Profil Usaha**: **Datik Batik** (beroperasi aktif sejak 2012 di Tangerang Selatan, Banten).
+- **Fokus Produk**: Kain batik tulis kontemporer, batik cap flora lokal khas Tangsel (anggrek van douglas & pesisiran), kemeja, outer, dan syal kriya.
+- **Tantangan Nyata**: Perajin rentan tersandung sengketa kemiripan motif karena sistem resmi PDKI DJKI hanya melayani pencarian teks kata kunci, sedangkan jasa konsultan HKI independen bertarif mahal (Rp 2 – 5 juta per desain).
+- **Dampak Penggunaan Tarum**:
+  - **Kecepatan**: Waktu skrining kemiripan visual selesai dalam **< 5 detik**.
+  - **Efisiensi Finansial**: Biaya validasi awal ditekan dari jutaan rupiah menjadi **Rp 0 (100% mandiri)**.
+  - **Nir-Sengketa (*Zero Dispute*)**: Mencegah pemborosan modal bahan baku (*sunk cost*) sebelum kain dicap/dicanting secara massal.
 
 ---
 

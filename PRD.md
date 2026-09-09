@@ -1,62 +1,62 @@
-# PRD: Cek Orisinalitas — Visual IP Checker untuk Pelaku Kriya & Fashion
+# PRD: Tarum — Visual IP Screening untuk Pelaku Kriya & Fashion
 
-**Versi:** 0.1 (Draft untuk submission EKRAF x Google Career Certificates)
-**Status:** Draft
-**Owner:** TITANIO YUDISTA
-**Terakhir diperbarui:** 6 September 2026
+**Versi:** 0.2 (Diselaraskan dengan Studi Kasus UMKM Datik Batik — Submission EKRAF x Google Career Certificates)  
+**Status:** Draft MVP Validated  
+**Owner:** TITANIO YUDISTA  
+**Terakhir diperbarui:** 9 September 2026  
 
 ---
 
 ## 1. Ringkasan Eksekutif
 
-Cek Orisinalitas adalah alat berbasis image-similarity search yang membantu pelaku UMKM kriya dan fashion mengecek apakah desain produk mereka (motif, pola, bentuk) sudah terlalu mirip dengan karya yang sudah ada di pasar atau database budaya publik — sebelum mereka mendaftarkan Hak Kekayaan Intelektual (HKI) atau merilis produk ke marketplace.
+**Tarum** adalah alat screening awal kemiripan visual (*image-similarity search*) yang membantu pelaku UMKM kriya dan fashion — seperti mitra studi kasus kami, **Datik Batik** (Tangerang Selatan) — mengecek apakah rancangan motif produk mereka (motif batik, pola, tata letak ornamen) memiliki potensi kemiripan dengan karya yang sudah beredar di pasar publik atau database warisan budaya nusantara, sebelum mereka merilis produk ke pasar atau mendaftarkannya ke Direktorat Jenderal Kekayaan Intelektual (DJKI).
 
-Ini bukan pengganti jasa hukum HKI. Ini adalah **alat screening awal** yang murah, cepat, dan dapat diakses pelaku usaha mikro yang selama ini tidak punya cara praktis untuk cek kemiripan visual — karena sistem resmi (PDKI/DJKI) hanya mendukung pencarian berbasis kata kunci teks, bukan kemiripan gambar.
+Ini bukan pengganti jasa hukum HKI atau vonis pengadilan. Tarum adalah **instrumen screening awal (pre-screening instrument)** mandiri yang cepat (< 5 detik), gratis, dan dapat diakses langsung oleh perajin di bengkel kerja kriya tanpa membutuhkan pemahaman hukum rumit — menutup celah sistem resmi pemerintah (PDKI/DJKI) yang hingga saat ini hanya mendukung pencarian berbasis kata kunci teks, bukan pencocokan visual gambar motif.
 
 ---
 
 ## 2. Problem Statement
 
-### 2.1 Masalah Inti
-Pelaku UMKM kriya (batik, tenun, kerajinan) dan fashion menghadapi dua risiko yang berlawanan arah tapi berakar dari masalah yang sama — **tidak ada cara mudah untuk mengecek kemiripan visual desain**:
+### 2.1 Masalah Inti (Studi Kasus: Datik Batik, Tangerang Selatan)
+UMKM Datik Batik yang telah memproduksi kriya batik tulis dan cap di Tangerang Selatan sejak tahun 2012 secara rutin menciptakan ragam hias motif baru (misalnya eksplorasi flora anggrek van douglas khas Tangsel). Namun, perajin menghadapi risiko besar yang berakar dari ketiadaan alat verifikasi visual:
 
-1. **Risiko sebagai peniru (tidak sengaja):** Desainer UMKM membuat motif/produk yang ternyata sangat mirip karya pihak lain, lalu gagal saat mendaftar HKI, atau kena somasi setelah produk terlanjur diproduksi massal.
-2. **Risiko sebagai korban:** Karya asli mereka ditiru pihak lain sebelum sempat didaftarkan, dan mereka tidak tahu cara mendeteksi maupun membuktikannya.
+1. **Risiko Pelanggaran Tak Sengaja (*Unintentional Infringement*):** Motif baru yang digambar perajin ternyata memiliki kesamaan pola dengan karya pihak lain yang sudah terdaftar, berujung pada somasi hukum, penolakan pendaftaran HKI di DJKI, serta kerugian fatal modal bahan baku (*sunk cost*) jika kain sudah terlanjur diproduksi massal.
+2. **Keterbatasan Aksesibilitas Jasa Legal:** Biaya penelusuran HKI melalui biro jasa hukum atau konsultan independen berkisar antara Rp 2 – 5 juta per desain—beban biaya yang mustahil dipenuhi secara berkala oleh kas usaha mikro kriya.
 
 ### 2.2 Kenapa Masalah Ini Valid (Evidence)
-- Sistem pencarian resmi DJKI (PDKI) hanya mendukung pencarian berbasis kata kunci/nama karya, bukan kemiripan visual — sehingga motif yang mirip secara visual tapi diberi nama berbeda tidak akan terdeteksi lewat pencarian manual.
-- Tools plagiarism-checker yang sudah beredar luas (Quetext, ZeroGPT, Plag.id, dll) seluruhnya dirancang untuk teks, bukan gambar/motif — celah ini belum digarap untuk kebutuhan produk fisik/kriya.
-- Riset IBM mencatat kesenjangan strategi digital antara UMKM dan korporasi besar, dengan literasi digital dan talenta teknis sebagai hambatan utama — pelaku kriya kecil jelas tidak punya akses ke jasa cek HKI profesional yang berbayar mahal.
+- **Keterbatasan Sistem Resmi:** Pangkalan Data Kekayaan Intelektual (PDKI) DJKI hanya menyediakan pencarian teks berdasarkan nama karya atau nama pemilik. Motif batik yang memiliki kemiripan visual hingga 80% namun dinamai berbeda dipastikan luput dari deteksi penelusuran manual.
+- **Ketiadaan Tools Visual untuk Kriya:** Seluruh plagiarism checker populer (seperti Quetext, Turnitin, Copyleaks) hanya menangani teks dokumen, belum ada yang dirancang khusus untuk menganalisis karakteristik visual motif fisik tekstil/kriya.
+- **Kesenjangan Digital Ekraf:** Riset menunjukkan pelaku usaha mikro kriya memiliki talenta seni tinggi namun terbatas dalam literasi hukum dan modal teknologi, sehingga rentan menjadi korban sengketa hak cipta.
 
 ### 2.3 Siapa yang Terdampak
-- **Primer:** Pelaku UMKM kriya & fashion skala mikro-kecil (pengrajin batik/tenun independen, brand fashion lokal, reseller produk kriya).
-- **Sekunder:** Konsultan HKI, dinas koperasi/UMKM daerah, komunitas ekraf yang mendampingi pelaku usaha sebelum pendaftaran merek/desain industri.
+- **Primer:** Pelaku UMKM kriya & fashion skala mikro-kecil, dipersonifikasikan oleh perajin dan desainer Datik Batik di Tangerang Selatan serta pengrajin batik nusantara.
+- **Sekunder:** Dinas Koperasi & UKM, Dekranasda daerah, konsultan HKI, dan inkubator komunitas ekraf yang mendampingi legalitas karya binaan.
 
 ---
 
 ## 3. Goals & Non-Goals
 
-### 3.1 Goals (untuk MVP hackathon)
-- G1: User bisa upload 1 foto desain/produk dan mendapatkan skor kemiripan terhadap dataset referensi dalam < 10 detik.
-- G2: Sistem menampilkan gambar pembanding paling mirip beserta skornya, bukan hanya angka mentah.
-- G3: Sistem memberi rekomendasi tindak lanjut yang jelas dan bertanggung jawab (bukan vonis hukum).
-- G4: Alur pakai cukup sederhana untuk pengguna dengan literasi digital dasar-menengah (maks 3 langkah dari upload sampai hasil).
+### 3.1 Goals (untuk MVP Hackathon & Validasi Pilot)
+- **G1:** Pengguna dapat mengunggah 1 foto rancangan desain/kain dan memperoleh skor kemiripan visual terhadap 2.599 motif referensi Batik Indonesia dalam waktu **< 5 detik**.
+- **G2:** Sistem menyajikan tampilan visual berdampingan (*side-by-side*) antara gambar pengguna dengan top-5 karya paling mirip beserta transparansi asal-usul motif.
+- **G3:** Sistem menyajikan rekomendasi tindakan terarah berbasis tiga tingkat risiko (`Cukup Orisinal`, `Perlu Ditinjau`, `Sangat Mirip`) dilengkapi tautan rujukan ke PDKI DJKI.
+- **G4:** Alur pengoperasian sangat intuitif (maksimal 3 langkah: *Upload* → *Cek* → *Baca Rekomendasi*) yang dapat dipakai mandiri oleh perajin tanpa pelatihan teknis.
 
-### 3.2 Non-Goals (secara eksplisit di luar cakupan MVP)
-- Bukan pengganti pendaftaran HKI resmi atau opini hukum — sistem tidak boleh mengklaim "aman secara hukum" atau "melanggar hukum".
-- Bukan pendeteksi plagiarisme teks, merek dagang (nama), atau audio/musik.
-- Bukan alat generative AI untuk membuat desain baru.
-- Tidak menangani proses pendaftaran HKI end-to-end (cukup memberi link/panduan ke DJKI).
+### 3.2 Non-Goals (Eksplisit di Luar Cakupan MVP)
+- Bukan pengganti pendaftaran HKI resmi, bukan opini hukum resmi, dan tidak mengeluarkan vonis hukum ("sah" / "melanggar").
+- Bukan pendeteksi plagiarisme teks nama merek atau audio/musik.
+- Bukan alat *generative AI* untuk membuat atau memodifikasi desain gambar secara otomatis.
+- Tidak memproses berkas pendaftaran HKI secara end-to-end ke sistem DJKI (hanya screening dan navigasi rujukan).
 
 ---
 
 ## 4. User Personas
 
-| Persona | Deskripsi | Kebutuhan Utama |
+| Persona | Profil & Deskripsi | Kebutuhan Utama |
 |---|---|---|
-| **Bu Rina, Pengrajin Batik Tulis** | Usaha rumahan, 5 tahun berjalan, belum pernah daftar HKI, minim literasi digital | Cara cepat & murah cek apakah motif barunya "aman" sebelum diproduksi |
-| **Kevin, Founder Brand Fashion Lokal** | Startup fashion kecil, sudah jualan di marketplace, agak melek teknologi | Bukti awal untuk memperkuat kasus jika mau somasi pihak yang meniru produknya |
-| **Pendamping UMKM Dinas Koperasi** | Memfasilitasi banyak UMKM sekaligus | Alat yang bisa direkomendasikan massal ke binaan tanpa training rumit |
+| **Ibu Rina / Tim Desain, Datik Batik** | Usaha kriya batik tulis & cap di Tangerang Selatan, berdiri sejak 2012 (~14 tahun), kapasitas 60–100 pcs/bulan, minim latar belakang hukum HKI | Cara cepat, mandiri, dan gratis untuk mengecek orisinalitas motif baru (misal motif flora anggrek Tangsel) sebelum diproduksi massal dan diajukan ke DJKI |
+| **Kevin, Founder Brand Fashion Lokal** | Startup fashion kriya kontemporer, memasarkan produk lewat marketplace & media sosial, melek teknologi | Alat screening instan dan bukti komparasi visual pendukung saat merancang koleksi musiman baru |
+| **Pendamping UMKM Dekranasda / Dinas Koperasi** | Instansi pembina UMKM kriya daerah di Tangerang Selatan dan sekitarnya | Instrumen kurasi digital praktis untuk memfasilitasi legalitas motif binaan sebelum fasilitasi HKI massal |
 
 ---
 
@@ -262,14 +262,17 @@ ASCII wireframe kasar:
 
 ---
 
-## 9. Success Metrics
+## 9. Success Metrics & Indikator Keberhasilan
 
-| Metrik | Target MVP/Demo |
+| Metrik / Indikator | Target MVP / Validasi Pilot Datik Batik |
 |---|---|
-| Waktu proses upload → hasil | < 10 detik |
-| Akurasi kualitatif (validasi manual tim) | Top-5 hasil relevan pada ≥ 80% kasus uji |
-| Kejelasan alur (usability test internal) | User baru bisa selesai 1 pengecekan tanpa panduan dalam < 2 menit |
-| Pemahaman disclaimer | User paham status hukum alat ini setelah 1x pemakaian (validasi lewat wawancara singkat) |
+| **Kecepatan Proses (Latency)** | Ekstraksi embedding & pencarian kemiripan selesai dalam **< 5 detik** per gambar |
+| **Cakupan Indeks Referensi** | **100% dari 2.599 motif Batik Indonesia** (38 kelas motif nusantara) terindeks aktif di FAISS |
+| **Efisiensi Biaya Validasi Awal** | Menekan biaya skrining awal dari Rp 2.000.000+ (konsultan HKI swasta) menjadi **Rp 0 (100% mandiri)** |
+| **Akurasi Kualitatif Pembanding** | Top-5 hasil pembanding relevan pada ≥ 85% kasus uji motif kriya/batik |
+| **Kejelasan Alur & Adopsi Pengguna** | 100% perajin Datik Batik mampu menyelesaikan alur pengecekan dalam **≤ 3 langkah** tanpa bantuan teknis |
+| **Nir-Sengketa (Zero Dispute)** | **0 kasus sengketa atau penolakan pendaftaran HKI** atas motif baru yang telah diverifikasi berisiko rendah oleh Tarum |
+| **Pemahaman Disclaimer Legal** | Pengguna paham bahwa Tarum adalah alat bantu screening awal (bukan vonis pengadilan) setelah 1x pemakaian |
 
 ---
 
