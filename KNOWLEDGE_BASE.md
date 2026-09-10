@@ -81,9 +81,11 @@ Proyek ini divalidasi langsung bersama mitra perajin kriya tekstil:
         PIL.Image Object                Vektor 512-dimensi
                │                               │
 ┌──────────────▼───────────────────────────────┴──────────────┐
-│        Embedding Service (sentence-transformers / PyTorch)   │
-│             Model Pretrained: CLIP ViT-B/32                 │
-│  - Ekstraksi Feature Map Visual Laten                       │
+│       Embedding Service (ONNX Runtime INT8 / C++ Engine)    │
+│        Model Pretrained: CLIP ViT-B/32 (clip_vision_int8)   │
+│  - Pra-pemrosesan Murni NumPy/Pillow (224x224, Bicubic)     │
+│  - Inferensi C++ ONNX Runtime (Tanpa PyTorch, RAM ~170MB)   │
+│  - Ekstraksi Feature Map Visual Laten 512-dimensi           │
 │  - Normalisasi L2-Norm (||v|| = 1.0)                        │
 └──────────────────────────────┬──────────────────────────────┘
                                │
@@ -92,7 +94,7 @@ Proyek ini divalidasi langsung bersama mitra perajin kriya tekstil:
 ┌──────────────────────────────▼──────────────────────────────┐
 │            Search Service & FAISS Vector Index              │
 │  - Index: faiss.IndexFlatIP (Inner Product = Cosine Sim)    │
-│  - Metadata Lookup: metadata.json (2.599 motif Batik)       │
+│  - Metadata Lookup: metadata.json (200 motif Batik)         │
 │  - Filter Kategori / Motif Opsional                         │
 │  - Transformasi Jarak -> Persentase Kemiripan (0 - 100%)    │
 └─────────────────────────────────────────────────────────────┘
@@ -103,26 +105,26 @@ Proyek ini divalidasi langsung bersama mitra perajin kriya tekstil:
 |---|---|---|---|
 | **Backend Framework** | FastAPI | `^0.115.0` | High-performance async REST API, validasi request via Pydantic v2 |
 | **ASGI Server** | Uvicorn | `^0.32.0` | Web server ASGI production-grade |
-| **Deep Learning** | PyTorch (Dynamic Quantized) | `^2.5.0` | Runtime inferensi visual (QInt8 memory optimized) |
-| **Model Embedding** | `sentence-transformers` | `^3.3.0` | Interface ekstraksi fitur CLIP (`clip-ViT-B-32`) |
+| **Inference Engine** | ONNX Runtime | `^1.18.0` | Runtime inferensi C++ statis (INT8 Quantized, RAM ~170MB) |
+| **Model Pretrained** | CLIP ViT-B/32 | INT8 ONNX | Model visi OpenAI CLIP terkuantisasi offline (85 MB) |
 | **Vector Database** | `faiss-cpu` | `^1.9.0` | Pencarian tetangga terdekat berkecepatan tinggi (IndexFlatIP) |
-| **Dataset Source** | Hugging Face `datasets` | `^2.20.0` | Loader dataset resmi 2.599 motif Batik Indonesia |
+| **Dataset Source** | Hugging Face `datasets` | `^2.20.0` | Loader dataset resmi 200 motif Batik Indonesia (dikomit di Git) |
 | **Image Processing** | Pillow (PIL) | `^11.0.0` | Validasi format, decoding, dan normalisasi dimensi gambar |
 | **Frontend Core** | React | `^19.2.8` | Komponen antarmuka deklaratif |
 | **Frontend Bundler** | Vite | `^8.2.2` | Development server cepat & bundler build produksi |
 | **Styling** | Vanilla CSS | W3C Standard | Tokenized CSS, zero framework overhead (No Tailwind) |
-| **Testing** | Pytest | `^8.3.0` | Test suite backend (8 skenario lulus) |
+| **Testing** | Pytest | `^8.3.0` | Test suite backend (9 skenario lulus termasuk verifikasi akurasi) |
 
 ---
 
 ## 4. Machine Learning & Algoritma Kemiripan
 
-### 4.1 Pemilihan Model: CLIP ViT-B/32 (Hugging Face Inference API)
+### 4.1 Pemilihan Model: CLIP ViT-B/32 (ONNX Runtime INT8)
 
-Model yang digunakan adalah **OpenAI CLIP (Contrastive Language-Image Pre-training)** varian **ViT-B/32** yang diakses melalui cloud API:
-- **Alasan Visual**: Mampu merepresentasikan tekstur, bentuk (parang, kawung, mega mendung), dan perulangan pola kriya ke dalam dimensi vektor matematika dengan presisi tinggi.
-- **Kinerja dan Optimasi Memori**: Model ini menggunakan **Hugging Face Inference API** via panggilan HTTP POST, yang secara efektif memangkas penggunaan memori RAM server dari ~1GB menjadi ~100MB di lingkungan *cloud* seperti Heroku (menghindari error R14/R15).
-- **Dimensi**: Menghasilkan 512-dimensi feature vector yang sangat cepat diindeks oleh FAISS.
+Model yang digunakan adalah **OpenAI CLIP (Contrastive Language-Image Pre-training)** varian **ViT-B/32** yang telah dikuantisasi secara statis ke format **ONNX INT8**:
+- **Alasan Visual**: Mampu merepresentasikan tekstur, bentuk (parang, kawung, mega mendung), dan perulangan pola kriya ke dalam dimensi vektor matematika dengan presisi tinggi (mencapai skor kemiripan >97% pada motif serupa).
+- **Kinerja dan Optimasi Memori**: Berbeda dari PyTorch penuh yang mengonsumsi RAM >1.4GB atau API eksternal yang tidak memiliki image pipeline khusus, model **ONNX INT8** (`clip_vision_int8.onnx`, ukuran 85MB) dieksekusi secara lokal oleh runtime C++ `onnxruntime`. Konsumsi RAM total hanya **~170 MB**, sangat aman untuk kuota Heroku Basic (512 MB).
+- **Dimensi**: Menghasilkan 512-dimensi feature vector yang dinormalisasi L2 dan langsung dicari di FAISS `IndexFlatIP`.
 
 ### 4.2 Formulasi Matematika Pencocokan Vektor
 Setiap vektor representasi gambar kueri ($\mathbf{u}$) dan gambar referensi ($\mathbf{v}$) dinormalisasi dengan $L_2\text{-norm}$:

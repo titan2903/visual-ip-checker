@@ -1,6 +1,6 @@
 # Tarum — Backend API & Core Pipeline
 
-Layanan backend untuk **Tarum (Visual IP Checker)** yang bertugas melakukan inferensi embedding visual desain kriya/fashion menggunakan **Hugging Face Inference API** (model **CLIP ViT-B/32**) dan pencarian kemiripan vektor menggunakan **FAISS**.
+Layanan backend untuk **Tarum (Visual IP Checker)** yang bertugas melakukan inferensi embedding visual desain kriya/fashion menggunakan **ONNX Runtime INT8** (model **CLIP ViT-B/32**) dan pencarian kemiripan vektor menggunakan **FAISS**.
 
 ---
 
@@ -14,27 +14,30 @@ backend/
 │   │   └── routes.py              # Endpoint: POST /check, GET /health
 │   ├── services/
 │   │   ├── __init__.py
-│   │   ├── embedding_service.py   # Ekstraksi fitur CLIP (sentence-transformers)
+│   │   ├── embedding_service.py   # Ekstraksi fitur CLIP via ONNX Runtime INT8 (RAM ~170MB)
 │   │   └── search_service.py      # Pencarian vektor FAISS & skor kemiripan
 │   ├── schemas/
 │   │   ├── __init__.py
 │   │   └── check.py               # Model Pydantic untuk request & response
-│   ├── config.py                  # Konfigurasi path, batas upload, & threshold
+│   ├── config.py                  # Konfigurasi path, batas upload, ONNX model path, & threshold
 │   ├── main.py                    # Aplikasi FastAPI, CORS, & static file serving
 │   └── __init__.py
 ├── data/
+│   ├── models/
+│   │   └── clip_vision_int8.onnx  # Model visual CLIP INT8 (~85 MB, dikomit ke git)
 │   ├── reference_images/          # Gambar referensi pembanding (.jpg, .png, .webp)
 │   └── index/
 │       ├── index.faiss            # File indeks vektor biner FAISS
 │       └── metadata.json          # Metadata karya referensi (ID, judul, kategori, dll.)
 ├── scripts/
 │   ├── __init__.py
-│   ├── create_dummy_data.py       # Generator 12 gambar motif kriya dummy
+│   ├── export_onnx.py             # Script ekspor model PyTorch CLIP ke ONNX INT8
+│   ├── create_dummy_data.py       # Generator motif kriya dummy
 │   └── build_index.py             # Script pembuat indeks vektor FAISS dari data/
 ├── tests/
 │   ├── __init__.py
-│   └── test_api.py                # Test suite pytest (7 skenario pengujian)
-├── requirements.txt               # Dependensi Python
+│   └── test_api.py                # Test suite pytest (9 skenario pengujian)
+├── requirements.txt               # Dependensi Python (tanpa torch, menggunakan onnxruntime)
 └── README.md                      # Dokumentasi teknis backend ini
 ```
 

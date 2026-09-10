@@ -15,19 +15,23 @@ load_dotenv(PROJECT_ROOT / ".env")
 DATA_DIR = Path(os.getenv("TARUM_DATA_DIR", str(BACKEND_DIR / "data")))
 REFERENCE_IMAGES_DIR = DATA_DIR / "reference_images"
 INDEX_DIR = DATA_DIR / "index"
+MODELS_DIR = DATA_DIR / "models"
 
 FAISS_INDEX_PATH = INDEX_DIR / "index.faiss"
 METADATA_PATH = INDEX_DIR / "metadata.json"
+ONNX_MODEL_PATH = Path(
+    os.getenv("TARUM_ONNX_MODEL_PATH", str(MODELS_DIR / "clip_vision_int8.onnx"))
+)
 
 # Ensure directories exist
 REFERENCE_IMAGES_DIR.mkdir(parents=True, exist_ok=True)
 INDEX_DIR.mkdir(parents=True, exist_ok=True)
+MODELS_DIR.mkdir(parents=True, exist_ok=True)
 
-# Pretrained Model
-# Default CLIP ViT-B/32 via sentence-transformers as specified in PRD Section 7
+# Pretrained Model & Embeddings
 MODEL_NAME = os.getenv("TARUM_MODEL_NAME", "clip-ViT-B-32")
 EMBEDDING_DIM = 512
-HUGGINGFACE_API_KEY = os.getenv("HUGGINGFACE_API_KEY", "")
+HUGGINGFACE_API_KEY = os.getenv("HUGGINGFACE_API_KEY", "")  # Deprecated in favor of local ONNX Runtime INT8
 
 # Hugging Face Dataset (PRD Section 7 & 7.1)
 HF_DATASET_NAME = os.getenv(

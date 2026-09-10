@@ -1,17 +1,28 @@
-import io
 import logging
-from typing import List
+from pathlib import Path
+from typing import List, Optional
 from PIL import Image
 import numpy as np
-import httpx
+import onnxruntime as ort
 
-from backend.app.config import MODEL_NAME, HUGGINGFACE_API_KEY
+from backend.app.config import MODEL_NAME, ONNX_MODEL_PATH
 
 logger = logging.getLogger("tarum.embedding")
 
+# Standard CLIP normalization constants (ImageNet mean & std used by OpenAI CLIP)
+CLIP_MEAN = np.array([0.48145466, 0.4578275, 0.40821073], dtype=np.float32)
+CLIP_STD = np.array([0.26862954, 0.26130258, 0.27577711], dtype=np.float32)
+
 
 class EmbeddingService:
-    _instance = None
+    """
+    Service to extract 512-dimensional visual embeddings using an offline-quantized
+    ONNX INT8 model of CLIP ViT-B/32.
+
+    Runs entirely locally using ONNX Runtime (C++ engine) with pure NumPy/Pillow
+    preprocessing. Requires NO PyTorch or GPU, running comfortably under 200MB RAM.
+    """
+    _instance: Optional["EmbeddingService"] = None
 
     @classmethod
     def get_instance(cls) -> "EmbeddingService":
@@ -19,95 +30,122 @@ class EmbeddingService:
             cls._instance = cls()
         return cls._instance
 
-    def __init__(self, model_name: str = MODEL_NAME):
-        self.model_name = model_name
-        self.api_url = f"https://api-inference.huggingface.co/pipeline/feature-extraction/{self.model_name}"
-        self.headers = {"Authorization": f"Bearer {HUGGINGFACE_API_KEY}"} if HUGGINGFACE_API_KEY else {}
-        logger.info(f"Initialized EmbeddingService using Hugging Face Inference API for model {self.model_name}.")
+    def __init__(self, model_path: Optional[Path] = None):
+        self.model_name = MODEL_NAME
+        self.model_path = model_path or ONNX_MODEL_PATH
+        self.session: Optional[ort.InferenceSession] = None
+        self._load_model()
+
+    def _load_model(self):
+        """Loads the ONNX Runtime inference session with CPU execution provider."""
+        if not self.model_path.exists():
+            logger.error(
+                f"ONNX model not found at {self.model_path}. "
+                "Run 'python backend/scripts/export_onnx.py' to generate the INT8 model."
+            )
+            return
+
+        try:
+            logger.info(f"Loading ONNX INT8 model from {self.model_path}...")
+            opts = ort.SessionOptions()
+            opts.intra_op_num_threads = 2
+            opts.inter_op_num_threads = 1
+            opts.graph_optimization_level = ort.GraphOptimizationLevel.ORT_ENABLE_ALL
+
+            self.session = ort.InferenceSession(
+                str(self.model_path),
+                sess_options=opts,
+                providers=["CPUExecutionProvider"],
+            )
+            logger.info(f"ONNX INT8 model successfully loaded (providers={self.session.get_providers()}).")
+        except Exception as e:
+            logger.error(f"Failed to load ONNX model from {self.model_path}: {e}")
+            self.session = None
 
     def is_loaded(self) -> bool:
-        # Since we use an external API, it's always "ready" from the backend's perspective.
-        return True
+        """Returns True if the ONNX inference session is initialized and ready."""
+        return self.session is not None
 
-    def _preprocess_image(self, image: Image.Image) -> bytes:
+    def _preprocess_image(self, image: Image.Image) -> np.ndarray:
         """
-        Ensure image is in RGB format and convert to JPEG bytes for API payload.
+        Preprocess a PIL Image according to standard CLIP ViT-B/32 vision requirements:
+        1. Convert mode to RGB
+        2. Resize shorter edge to 224 with BICUBIC resampling
+        3. Center crop to 224x224
+        4. Rescale pixels to [0.0, 1.0]
+        5. Normalize with CLIP mean and std
+        6. Transpose to CHW shape: (3, 224, 224)
         """
         if image.mode != "RGB":
             image = image.convert("RGB")
-        img_byte_arr = io.BytesIO()
-        image.save(img_byte_arr, format='JPEG')
-        return img_byte_arr.getvalue()
 
-    def _normalize(self, v: np.ndarray) -> np.ndarray:
-        """L2 Normalization"""
-        norm = np.linalg.norm(v)
-        if norm == 0: 
-           return v
-        return v / norm
+        w, h = image.size
+        scale = 224.0 / min(w, h)
+        new_w = max(224, int(round(w * scale)))
+        new_h = max(224, int(round(h * scale)))
+
+        resized = image.resize((new_w, new_h), Image.Resampling.BICUBIC)
+
+        left = (new_w - 224) // 2
+        top = (new_h - 224) // 2
+        cropped = resized.crop((left, top, left + 224, top + 224))
+
+        arr = np.array(cropped, dtype=np.float32) / 255.0
+        arr = (arr - CLIP_MEAN) / CLIP_STD
+        arr = np.transpose(arr, (2, 0, 1))  # (H, W, C) -> (C, H, W)
+        return arr
+
+    def _normalize_embeddings(self, embeddings: np.ndarray) -> np.ndarray:
+        """Applies L2 normalization across the embedding vectors (axis=-1)."""
+        norms = np.linalg.norm(embeddings, axis=-1, keepdims=True)
+        norms = np.where(norms == 0, 1.0, norms)
+        return (embeddings / norms).astype(np.float32)
 
     def encode_image(self, image: Image.Image) -> np.ndarray:
         """
-        Encodes a single PIL Image into a normalized 512-d float32 vector using Hugging Face API.
+        Encodes a single PIL Image into a normalized 512-d float32 vector.
         Returns array of shape (1, 512).
         """
-        img_bytes = self._preprocess_image(image)
-        try:
-            response = httpx.post(self.api_url, headers=self.headers, data=img_bytes, timeout=30.0)
-            
-            # API might be loading the model, which returns 503 and estimated_time
-            if response.status_code == 503:
-                data = response.json()
-                if "estimated_time" in data:
-                    logger.warning(f"Model is loading on Hugging Face. Estimated time: {data['estimated_time']}s")
-                    # You could implement retry logic here, but for now we raise to notify the client
-                    raise ValueError(f"Model is currently loading on Hugging Face API. Please try again in {int(data['estimated_time'])} seconds.")
-            
-            response.raise_for_status()
-            embedding = response.json()
-            
-            if isinstance(embedding, list):
-                # The API usually returns a 1D list of floats for feature extraction
-                # e.g., [0.123, -0.456, ...]
-                if len(embedding) > 0 and isinstance(embedding[0], list):
-                    embedding = embedding[0]  # Flatten if nested
-                    
-                vec = np.array(embedding, dtype=np.float32)
-                vec = vec.reshape(1, -1)  # Shape (1, 512)
-                
-                # normalize_embeddings=True ensures L2 norm is 1.0 (unit vector)
-                return np.apply_along_axis(self._normalize, 1, vec)
-            else:
-                logger.error(f"Unexpected HF API response format: {embedding}")
-                if "error" in embedding:
-                    raise ValueError(f"Hugging Face API Error: {embedding['error']}")
-                raise ValueError("Unexpected response format from Hugging Face API")
-                
-        except httpx.HTTPStatusError as e:
-            logger.error(f"HTTP Error {e.response.status_code} from Hugging Face API: {e.response.text}")
-            raise
-        except httpx.RequestError as e:
-            # Lingkungan lokal (seperti sandbox AI) mungkin memblokir akses internet keluar (Errno -5).
-            # Kita kembalikan vektor dummy agar UI/Frontend tetap bisa dites secara lokal.
-            logger.warning(f"Network error (API Hugging Face tidak dapat diakses): {e}. MOCKING HASIL UNTUK TESTING LOKAL.")
-            dummy_vec = np.random.rand(1, 512).astype(np.float32)
-            return np.apply_along_axis(self._normalize, 1, dummy_vec)
-        except Exception as e:
-            logger.error(f"Failed to encode image via Hugging Face API: {e}")
-            raise
+        if not self.is_loaded():
+            raise RuntimeError(
+                f"EmbeddingService ONNX model is not loaded. Expected path: {self.model_path}"
+            )
+
+        processed = self._preprocess_image(image)
+        input_tensor = np.expand_dims(processed, axis=0)  # Shape (1, 3, 224, 224)
+
+        raw_outputs = self.session.run(["embedding"], {"pixel_values": input_tensor})[0]
+        return self._normalize_embeddings(raw_outputs)
 
     def encode_images(
         self, images: List[Image.Image], batch_size: int = 32, show_progress: bool = True
     ) -> np.ndarray:
         """
-        Encodes a batch of PIL Images into normalized float32 vectors.
+        Encodes a list of PIL Images into normalized float32 vectors.
+        Processes in batches of size `batch_size`.
         Returns array of shape (N, 512).
-        For API usage, we process them sequentially to avoid complex batching logic limitations.
         """
-        embeddings = []
-        for img in images:
-            # Result is shape (1, 512), we extract the 1D array [0] to append
-            vec = self.encode_image(img)[0]
-            embeddings.append(vec)
-            
-        return np.array(embeddings, dtype=np.float32)
+        if not self.is_loaded():
+            raise RuntimeError(
+                f"EmbeddingService ONNX model is not loaded. Expected path: {self.model_path}"
+            )
+
+        if not images:
+            return np.empty((0, 512), dtype=np.float32)
+
+        all_embeddings = []
+        total = len(images)
+
+        for i in range(0, total, batch_size):
+            batch_images = images[i : i + batch_size]
+            preprocessed_list = [self._preprocess_image(img) for img in batch_images]
+            batch_tensor = np.stack(preprocessed_list, axis=0)  # Shape (B, 3, 224, 224)
+
+            outputs = self.session.run(["embedding"], {"pixel_values": batch_tensor})[0]
+            normalized = self._normalize_embeddings(outputs)
+            all_embeddings.append(normalized)
+
+            if show_progress and total > batch_size:
+                logger.info(f"Encoded {min(i + batch_size, total)}/{total} images...")
+
+        return np.concatenate(all_embeddings, axis=0)

@@ -108,6 +108,36 @@ def test_check_valid_image(client: TestClient):
     assert top1["risk_level"] in ["Cukup Orisinal", "Perlu Ditinjau", "Sangat Mirip"]
 
 
+def test_check_accuracy_on_reference_image(client: TestClient):
+    """
+    Verifikasi akurasi ONNX Runtime INT8: gambar motif referensi yang ada di dataset
+    harus menghasilkan kemiripan tinggi (>90%) dan status 'Sangat Mirip',
+    bukan skor di bawah 10%.
+    """
+    from backend.app.config import REFERENCE_IMAGES_DIR
+    test_img_path = REFERENCE_IMAGES_DIR / "hf_batik_0002_aceh.jpg"
+    if not test_img_path.exists():
+        # Cari gambar apa saja yang berawalan hf_batik_
+        images = list(REFERENCE_IMAGES_DIR.glob("hf_batik_*.jpg"))
+        if not images:
+            pytest.skip("No reference batik images found to verify accuracy")
+        test_img_path = images[0]
+
+    with open(test_img_path, "rb") as f:
+        img_bytes = f.read()
+
+    files = {"file": (test_img_path.name, img_bytes, "image/jpeg")}
+    response = client.post("/check", files=files)
+
+    assert response.status_code == 200
+    data = response.json()
+    assert data["status"] == "success"
+    # Memastikan skor kemiripan > 90% (menguji akurasi tinggi ONNX INT8)
+    assert data["max_similarity_score"] >= 90.0, f"Expected >= 90%, got {data['max_similarity_score']}%"
+    assert data["risk_level"] == "Sangat Mirip"
+
+
+
 def test_check_invalid_extension(client: TestClient):
     files = {"file": ("test.pdf", b"%PDF-1.4 dummy content", "application/pdf")}
     response = client.post("/check", files=files)
