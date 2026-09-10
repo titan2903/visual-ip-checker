@@ -30,4 +30,7 @@ Thumbs.db
 *.sln
 *.sw?
 .vercel
+.firebase/
+firebase-debug.log*
 .env*
+
