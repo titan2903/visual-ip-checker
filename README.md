@@ -33,7 +33,7 @@ Proyek ini divalidasi menggunakan studi kasus nyata dari mitra perajin kriya lok
   - `Sangat Mirip` (≥ 75%): Risiko tinggi penolakan/somasi, disarankan revisi menyeluruh.
 - **UI/UX Presisi Instrumen**: Mengikuti *Token System* PRD Section 8.1 (Palet Paper, Ink, Indigo Tarum, Line Grey, Signal Amber) dengan layout asimetris 40/60.
 - **100% Berjalan Lokal & Hemat Biaya**: Tidak membutuhkan API key pihak ketiga berbayar dan dapat berjalan cepat di CPU laptop/server standar.
-- **CI/CD Otomatis Terpisah**: Workflow GitHub Actions terpisah untuk deployment backend (Heroku) dan frontend (Vercel).
+- **Deployment Terpisah**: Konfigurasi deployment terpisah untuk backend (Heroku) dan frontend (Firebase Hosting - web.app).
 
 ---
 
@@ -82,7 +82,8 @@ visual-ip-checker/
 │   ├── .env                           # Konfigurasi environment frontend lokal
 │   ├── .env.example                   # Template konfigurasi frontend
 │   ├── .gitignore                     # Git ignore khusus frontend
-│   ├── vercel.json                    # Konfigurasi SPA routing & build Vercel
+│   ├── firebase.json                  # Konfigurasi SPA routing & public directory Firebase
+│   ├── .firebaserc                    # Konfigurasi project ID Firebase Hosting
 │   ├── vite.config.js                 # Konfigurasi proxy API Vite
 │   └── package.json                   # Dependensi React & Vite
 ├── Procfile                           # Heroku process file di root
@@ -210,10 +211,10 @@ Proyek ini telah dilengkapi dengan GitHub Actions yang otomatis berjalan ketika 
    - Jika tes lulus, deploy ke Heroku menggunakan `Procfile` dan `runtime.txt`.
    - *GitHub Secrets*: `HEROKU_API_KEY`, `HEROKU_APP_NAME`, `HEROKU_EMAIL`.
 
-2. **Frontend Deploy to Vercel** ([`.github/workflows/frontend-deploy.yml`](.github/workflows/frontend-deploy.yml)):
-   - Menjalankan pengujian build bundle Vite.
-   - Melakukan rilis produksi ke Vercel via CLI resmi.
-   - *GitHub Secrets*: `VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID`.
+2. **Frontend Deploy to Firebase Hosting**:
+   - Menjalankan pengujian build bundle Vite (`npm run build`).
+   - Melakukan rilis produksi ke Firebase Hosting (`https://tarum-visual-ip.web.app`) via Firebase CLI (`npx firebase-tools deploy --only hosting`).
+   - File konfigurasi: [`frontend/firebase.json`](frontend/firebase.json) dan [`frontend/.firebaserc`](frontend/.firebaserc).
 
 ---
 

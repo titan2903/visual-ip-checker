@@ -135,7 +135,7 @@ Prinsip: **jangan bangun ulang apa yang sudah ada.** Semua komponen inti pakai m
 - Embedding: ONNX Runtime INT8 (`clip_vision_int8.onnx`, ~85MB) dari OpenAI CLIP ViT-B/32, berjalan lokal via C++ runtime sangat cepat, berakurasi tinggi (>90%), dan hemat RAM (~170MB, tanpa PyTorch).
 - Vector index: FAISS (in-memory, gratis) untuk demo; Supabase pgvector (tier gratis) kalau butuh persistence.
 - Backend: FastAPI, deploy di Heroku Basic / Eco dyno (512MB RAM).
-- Frontend: React + Vite, deploy di Vercel.
+- Frontend: React + Vite, deploy di Firebase Hosting (`tarum-visual-ip.web.app`).
 - Storage gambar: Direktori statis lokal yang diindeks ke FAISS.
 
 **Contoh inti pipeline implementasi (menggunakan ONNX Runtime INT8):**

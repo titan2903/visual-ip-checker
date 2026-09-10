@@ -4,7 +4,7 @@
 Tarum adalah aplikasi web pendeteksi kemiripan visual (*visual IP screening*) yang dirancang khusus untuk pelaku UMKM kriya dan fashion nusantara. Sistem membandingkan motif kriya baru dengan database motif budaya Indonesia.
 
 Sistem terdiri dari dua komponen utama:
-1. **Frontend**: Antarmuka berbasis React 19 + Vite (dihosting di Vercel), dibangun dengan Vanilla CSS tokenized (tanpa Tailwind).
+1. **Frontend**: Antarmuka berbasis React 19 + Vite (dihosting di Firebase Hosting - `tarum-visual-ip.web.app`), dibangun dengan Vanilla CSS tokenized (tanpa Tailwind).
 2. **Backend**: FastAPI + ONNX Runtime C++ Engine + FAISS (dihosting di Heroku Basic Dyno 512MB RAM).
 
 ---
@@ -14,7 +14,7 @@ Sistem terdiri dari dua komponen utama:
 ```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    Browser Klien / Frontend                │
-│             React 19 + Vite (Vercel Production)             │
+│        React 19 + Vite (Firebase Hosting Production)        │
 │  - Input Gambar: Drag & Drop / File Input (max 5MB)         │
 │  - Polling Status Server: GET /api/health                   │
 │  - Rendering Hasil: Risk Badge, Top-5 Matches, Rekomendasi │

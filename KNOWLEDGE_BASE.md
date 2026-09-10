@@ -65,7 +65,7 @@ Proyek ini divalidasi langsung bersama mitra perajin kriya tekstil:
 ```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    Browser Klien / Frontend                │
-│             React 19 + Vite (Port 5173 / Vercel)            │
+│        React 19 + Vite (Port 5173 / Firebase Hosting)       │
 │  - Input Gambar (JPG/PNG max 5MB)                          │
 │  - Polling Status Server (/api/health)                     │
 │  - Rendering Hasil: Skor Count-Up, Top-5 Match, Rekomendasi│
@@ -328,7 +328,7 @@ cd frontend && npm run build
 
 ### 9.3 Pipeline CI/CD Otomatis
 - **Backend ([`.github/workflows/backend-deploy.yml`](.github/workflows/backend-deploy.yml))**: Menjalankan pengujian `pytest`. Jika lulus, otomatis merilis ke Heroku melalui `Procfile` dan `runtime.txt`.
-- **Frontend ([`.github/workflows/frontend-deploy.yml`](.github/workflows/frontend-deploy.yml))**: Memverifikasi build Vite dan merilis bundle produksi ke Vercel via Vercel CLI.
+- **Frontend**: Memverifikasi build Vite (`npm run build`) dan merilis bundle produksi ke Firebase Hosting (`https://tarum-visual-ip.web.app`) via Firebase CLI (`firebase deploy --only hosting`).
 
 ---
 
