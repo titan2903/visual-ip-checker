@@ -1,7 +1,9 @@
 # Tarum — Visual IP Screening untuk Pelaku Kriya & Fashion
 
 **Owner:** TITANIO YUDISTA  
-**Status:** Draft MVP (Submission EKRAF x Google Career Certificates)
+**Status:** Draft MVP (Submission EKRAF x Google Career Certificates)  
+**Slide Presentasi (Canva):** [canva.link/tarum](https://canva.link/tarum)  
+**Live Demo:** [tarum-visual-ip.web.app](https://tarum-visual-ip.web.app)
 
 Tarum adalah instrumen screening awal kemiripan visual desain berbasis *deep learning* untuk pelaku UMKM kriya dan fashion (fokus MVP: **Batik Indonesia**), divalidasi bersama mitra studi kasus **Datik Batik** (Tangerang Selatan). Sistem mendeteksi potensi kemiripan motif secara visual menggunakan model pretrained **CLIP ViT-B/32** dan pencarian vektor berkecepatan tinggi **FAISS** sebelum produk didaftarkan ke HKI (PDKI) atau diproduksi massal.
 
@@ -228,6 +230,7 @@ Proyek ini telah dilengkapi dengan GitHub Actions yang otomatis berjalan ketika 
 
 ## 📚 Dokumen Spesifikasi & Terkait
 
+- 🎨 [**Slide Presentasi Pitch Deck (Canva)**](https://canva.link/tarum) — Slide presentasi visualisasi solusi, studi kasus UMKM Datik Batik, dan arsitektur AI Tarum.
 - 🧠 [**KNOWLEDGE_BASE.md**](KNOWLEDGE_BASE.md) — Knowledge Base teknis komprehensif (*Single Source of Truth*: arsitektur, algoritma CLIP & FAISS, pipeline data, dan runbook operasional).
 - 📄 [**PRD.md**](PRD.md) — Product Requirement Document (spesifikasi fungsional, persona Datik Batik, & token desain UI/UX).
 - 🏗️ [**ARCHITECTURE.md**](ARCHITECTURE.md) — Dokumen arsitektur teknis sistem dan integrasi service.

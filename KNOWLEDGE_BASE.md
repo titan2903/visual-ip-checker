@@ -3,6 +3,7 @@
 **Repository:** `visual-ip-checker`  
 **Owner:** TITANIO YUDISTA  
 **Versi Sistem:** 0.2 (MVP Validated)  
+**Slide Presentasi (Canva):** [canva.link/tarum](https://canva.link/tarum)  
 **Tujuan Dokumen:** Referensi tunggal komprehensif (Single Source of Truth) mengenai arsitektur, algoritma, basis data, standar UI/UX, kontrak API, dan pedoman operasional aplikasi **Tarum**.
 
 ---

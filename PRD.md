@@ -3,7 +3,8 @@
 **Versi:** 0.2 (Diselaraskan dengan Studi Kasus UMKM Datik Batik — Submission EKRAF x Google Career Certificates)  
 **Status:** Draft MVP Validated  
 **Owner:** TITANIO YUDISTA  
-**Terakhir diperbarui:** 9 September 2026  
+**Slide Presentasi (Canva):** [canva.link/tarum](https://canva.link/tarum)  
+**Terakhir diperbarui:** 10 September 2026  
 
 ---
 
