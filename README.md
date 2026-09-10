@@ -89,8 +89,6 @@ visual-ip-checker/
 ├── ARCHITECTURE.md                    # Dokumen Arsitektur Sistem
 ├── KNOWLEDGE_BASE.md                  # [KNOWLEDGE_BASE.md](KNOWLEDGE_BASE.md) - Single Source of Truth & Knowledge Base Proyek
 ├── PRD.md                             # [PRD.md](PRD.md) - Dokumen Product Requirement Document
-├── PROMPT_PHASE1.md                   # Spesifikasi teknis Fase 1 (Backend Core)
-├── PROMPT_PHASE2.md                   # Spesifikasi teknis Fase 2 (Frontend UI)
 └── README.md                          # Dokumentasi utama proyek ini
 ```
 

@@ -137,32 +137,29 @@ Prinsip: **jangan bangun ulang apa yang sudah ada.** Semua komponen inti pakai m
 - Frontend: React + Vite, deploy di Vercel.
 - Storage gambar: Direktori statis lokal yang diindeks ke FAISS.
 
-**Contoh inti pipeline (bukan production-ready, ilustrasi alur):**
+**Contoh inti pipeline implementasi (menggunakan ONNX Runtime INT8):**
 ```python
-from datasets import load_dataset
-from sentence_transformers import SentenceTransformer
 import faiss
 import numpy as np
+import onnxruntime as ort
 
-# 1. Load dataset referensi dari HuggingFace (dataset terpilih untuk MVP,
-#    lihat rasional pemilihan di section 7.1)
-ds = load_dataset("muhammadsalmanalfaridzi/Batik-Indonesia")
-reference_images = [row["image"] for row in ds["train"]]
-reference_labels  = [row.get("label") for row in ds["train"]]  # metadata utk hasil
+# 1. Muat session model ONNX INT8 (RAM ~170MB, tanpa PyTorch)
+session = ort.InferenceSession(
+    "backend/data/models/clip_vision_int8.onnx", 
+    providers=["CPUExecutionProvider"]
+)
 
-# 2. Encode ke embedding pakai model pretrained
-model = SentenceTransformer('clip-ViT-B-32')
-reference_embeddings = model.encode(reference_images, convert_to_numpy=True)
+# 2. Muat FAISS IndexFlatIP (Cosine Similarity via vektor ternormalisasi L2)
+index = faiss.read_index("backend/data/index/index.faiss")
 
-# 3. Bangun index vektor sekali di awal (bisa di-cache/disimpan ke disk)
-index = faiss.IndexFlatL2(reference_embeddings.shape[1])
-index.add(reference_embeddings)
+# 3. Pra-pemrosesan citra kueri (224x224 Bicubic, normalisasi ImageNet) & ekstraksi
+# query_tensor shape: (1, 3, 224, 224)
+raw_vec = session.run(["embedding"], {"pixel_values": query_tensor})[0]
+norm_vec = raw_vec / np.linalg.norm(raw_vec)  # L2 normalization (unit vector)
 
-# 4. Saat user upload gambar baru
-query_embedding = model.encode([uploaded_image], convert_to_numpy=True)
-distances, indices = index.search(query_embedding, k=5)
-# -> mapping distance ke skor kemiripan (0-100%), ambil reference_labels[i] 
-#    dan gambar pembanding untuk ditampilkan ke user
+# 4. Pencarian top-k di FAISS
+similarities, indices = index.search(norm_vec.astype(np.float32), k=5)
+# -> skor kemiripan = clamp(similarities[0][i] * 100.0, 0.0, 100.0)
 ```
 
 ### 7.1 Data Requirements
