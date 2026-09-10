@@ -48,20 +48,23 @@ visual-ip-checker/
 │   │   ├── api/
 │   │   │   └── routes.py              # Endpoint API (POST /check, GET /health)
 │   │   ├── services/
-│   │   │   ├── embedding_service.py   # Ekstraksi fitur CLIP (sentence-transformers)
+│   │   │   ├── embedding_service.py   # Ekstraksi fitur CLIP via ONNX Runtime INT8 (RAM ~170MB)
 │   │   │   └── search_service.py      # Pencarian vektor FAISS & kalkulasi skor
 │   │   ├── schemas/
 │   │   │   └── check.py               # Schema Pydantic request & response
 │   │   ├── config.py                  # Konfigurasi aplikasi & load .env
 │   │   └── main.py                    # Entrypoint FastAPI & static file mounting
 │   ├── data/
+│   │   ├── models/
+│   │   │   └── clip_vision_int8.onnx  # Model visual CLIP INT8 (~85 MB, dikomit ke git)
 │   │   ├── reference_images/          # Dataset gambar referensi produk/motif
 │   │   └── index/                     # File biner index.faiss & metadata.json
 │   ├── scripts/
-│   │   ├── create_dummy_data.py       # Generator 12 motif kriya dummy
+│   │   ├── export_onnx.py             # Script ekspor model PyTorch CLIP ke ONNX INT8
+│   │   ├── create_dummy_data.py       # Generator motif kriya dummy
 │   │   └── build_index.py             # Script pembangun indeks FAISS
 │   ├── tests/
-│   │   └── test_api.py                # Test suite pytest (7 skenario)
+│   │   └── test_api.py                # Test suite pytest (9 skenario)
 │   ├── .env                           # Konfigurasi environment backend lokal
 │   ├── .env.example                   # Template konfigurasi backend
 │   ├── .gitignore                     # Git ignore khusus backend
@@ -160,7 +163,8 @@ Buka terminal baru:
 ### Backend (`backend/.env`)
 | Variabel | Default | Keterangan |
 |---|---|---|
-| `TARUM_MODEL_NAME` | `clip-ViT-B-32` | Model CLIP via sentence-transformers |
+| `TARUM_MODEL_NAME` | `clip-ViT-B-32` | Model CLIP vision encoder |
+| `TARUM_ONNX_MODEL_PATH` | `backend/data/models/clip_vision_int8.onnx` | Lokasi model ONNX INT8 terkuantisasi |
 | `TARUM_HF_DATASET` | `muhammadsalmanalfaridzi/Batik-Indonesia` | Dataset Hugging Face referensi batik (PRD Section 7.1) |
 | `TARUM_HOST` | `0.0.0.0` | Host binding server FastAPI |
 | `TARUM_PORT` | `8000` | Port listening server |
@@ -187,7 +191,7 @@ Buka terminal baru:
 # Dari root direktori proyek
 PYTHONPATH=. pytest -p no:launch_testing backend/tests/ -v
 ```
-*Menguji 7 skenario: endpoint root, health check, static file thumbnail, kalkulasi kemiripan valid, validasi ekstensi tidak sah, validasi file rusak, dan penolakan file > 5MB.*
+*Menguji 9 skenario: endpoint root, health check, static file thumbnail, filter kategori, kalkulasi kemiripan valid, verifikasi akurasi motif serupa (>90%), validasi ekstensi tidak sah, validasi file rusak, dan penolakan file > 5MB.*
 
 ### Menguji Build Frontend:
 ```bash
@@ -215,7 +219,7 @@ Proyek ini telah dilengkapi dengan GitHub Actions yang otomatis berjalan ketika 
 
 ## 📌 Asumsi Teknis & Dasar Validasi
 
-1. **Model Machine Learning**: Menggunakan model **CLIP ViT-B/32** (Contrastive Language-Image Pre-training) yang diekstraksi ke 512 dimensi vektor visual laten ternormalisasi ($L_2\text{-norm} = 1$). Ekstraksi dilakukan secara cloud melalui **Hugging Face Inference API** untuk menghemat konsumsi memori RAM server.
+1. **Model Machine Learning**: Menggunakan model **CLIP ViT-B/32** (Contrastive Language-Image Pre-training) yang dikuantisasi secara statis ke format **ONNX INT8** (`clip_vision_int8.onnx`, ukuran 85MB). Ekstraksi fitur visual dieksekusi secara lokal menggunakan engine C++ ONNX Runtime yang mandiri, berakurasi tinggi (>90%), dan super hemat RAM (~170 MB vs batas 512 MB Heroku).
 2. **Kalkulasi Kemiripan**: Menggunakan **Cosine Similarity** via **FAISS IndexFlatIP**:
    $$\text{Skor Kemiripan (\%)} = \text{clamp}((\mathbf{u} \cdot \mathbf{v}) \times 100.0, 0.0, 100.0)$$
 3. **Pernyataan Hukum (Legal Disclaimer)**:

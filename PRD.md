@@ -131,11 +131,11 @@ Prinsip: **jangan bangun ulang apa yang sudah ada.** Semua komponen inti pakai m
 ```
 
 **Stack yang disarankan (budget bootstrap-friendly):**
-- Embedding: Hugging Face Inference API (`sentence-transformers/clip-ViT-B-32`) untuk ekstraksi vektor yang bebas memori di server.
+- Embedding: ONNX Runtime INT8 (`clip_vision_int8.onnx`, ~85MB) dari OpenAI CLIP ViT-B/32, berjalan lokal via C++ runtime sangat cepat, berakurasi tinggi (>90%), dan hemat RAM (~170MB, tanpa PyTorch).
 - Vector index: FAISS (in-memory, gratis) untuk demo; Supabase pgvector (tier gratis) kalau butuh persistence.
-- Backend: FastAPI, deploy di Render/Railway free tier.
-- Frontend: React + Vite atau Next.js, deploy di Vercel free tier.
-- Storage gambar: Supabase Storage atau Cloudflare R2 (free tier).
+- Backend: FastAPI, deploy di Heroku Basic / Eco dyno (512MB RAM).
+- Frontend: React + Vite, deploy di Vercel.
+- Storage gambar: Direktori statis lokal yang diindeks ke FAISS.
 
 **Contoh inti pipeline (bukan production-ready, ilustrasi alur):**
 ```python
