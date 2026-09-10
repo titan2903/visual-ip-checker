@@ -281,7 +281,8 @@ Menyajikan file gambar thumbnail referensi secara statis ke peramban.
 ### 8.1 Backend (`backend/.env`)
 | Variabel | Tipe Data | Default | Keterangan |
 |---|---|---|---|
-| `TARUM_MODEL_NAME` | String | `clip-ViT-B-32` | Nama model CLIP dari sentence-transformers |
+| `TARUM_MODEL_NAME` | String | `clip-ViT-B-32` | Nama model pretrained CLIP vision encoder |
+| `TARUM_ONNX_MODEL_PATH` | String | `backend/data/models/clip_vision_int8.onnx` | Lokasi model ONNX INT8 terkuantisasi |
 | `TARUM_HF_DATASET` | String | `muhammadsalmanalfaridzi/Batik-Indonesia` | Nama dataset Hugging Face referensi |
 | `TARUM_HOST` | String | `0.0.0.0` | Host listener server |
 | `TARUM_PORT` | Integer | `8000` | Port listener server |
@@ -332,11 +333,11 @@ cd frontend && npm run build
 
 ## 10. Troubleshooting & Gotchas
 
-### 10.1 Error 502 (Bad Gateway) saat Server Pertama Kali Berjalan
-* **Penyebab:** Model deep learning CLIP ViT-B/32 membutuhkan fase inisialisasi / *warm-up* memori tensor selama ~15–20 detik saat Uvicorn pertama kali dijalankan. Jika proxy frontend mencoba memanggil endpoint sebelum model selesai di-load, server gateway merespons `502 Bad Gateway`.
-* **Solusi yang Diterapkan:**
-  1. Frontend dilengkapi polling liveness setiap 4 detik ke `/api/health`.
-  2. Frontend menampilkan status "Backend sedang memuat model / terputus" secara informatif, dan tombol upload dinonaktifkan sementara hingga backend siap.
+### 10.1 Penanganan Waktu Inisialisasi Backend
+* **Karakteristik Inisialisasi:** Dengan model **ONNX Runtime INT8**, inisialisasi sesi model berlangsung sangat cepat (**< 300 milidetik**) saat Uvicorn pertama kali berjalan, jauh lebih cepat dibanding runtime PyTorch terdahulu (~15–20 detik).
+* **Mekanisme Ketahanan Frontend:**
+  1. Frontend tetap dilengkapi polling liveness setiap 4 detik ke `/api/health`.
+  2. Frontend menampilkan status "Backend sedang bersiap / terputus" secara informatif jika server backend belum selesai startup atau sedang proses restart/deploy.
 
 ### 10.2 Konflik Pytest dengan Plugin ROS 2 (`launch_testing`)
 * **Gejala:** Muncul error `launch_testing.pytest.hooks` saat menjalankan `pytest` di lingkungan Linux dengan instalasi ROS 2.

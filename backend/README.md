@@ -195,7 +195,7 @@ Memeriksa kesiapan model CLIP dan status indeks FAISS.
   "model_name": "clip-ViT-B-32",
   "model_loaded": true,
   "index_loaded": true,
-  "total_indexed_images": 12
+  "total_indexed_images": 200
 }
 ```
 
@@ -208,9 +208,11 @@ Menyajikan file gambar referensi yang tersimpan di server secara statis sehingga
 
 ## ⚙️ Logika Teknis & Kalkulasi Skor
 
-   - Mengirim request gambar via HTTP POST ke **Hugging Face Inference API** (`clip-ViT-B-32`).
-   - Server mengembalikan vektor fitur berdimensi 512.
-   - Vektor secara eksplisit dinormalisasi ke satuan L2 norm ($\|v\|_2 = 1.0$).
+1. **Ekstraksi Vektor Embedding (ONNX Runtime INT8)**:
+   - Pra-pemrosesan citra murni dengan Pillow & NumPy: resize bicubic 224x224, center crop, dan normalisasi ImageNet mean/std.
+   - Inferensi dieksekusi secara lokal menggunakan engine C++ `onnxruntime` dengan model `clip_vision_int8.onnx` (~85 MB).
+   - Menghasilkan vektor fitur berdimensi 512 tanpa memerlukan dependensi PyTorch (RAM super hemat: ~170 MB).
+   - Vektor dinormalisasi L2 ($\|v\|_2 = 1.0$).
 
 2. **Perhitungan Skor Kemiripan (%)**:
    - Indeks FAISS menggunakan `IndexFlatIP` (Inner Product).
@@ -231,15 +233,14 @@ Menyajikan file gambar referensi yang tersimpan di server secara statis sehingga
 Jalankan test suite menggunakan pytest:
 ```bash
 # Dari root proyek
-pytest backend/tests/ -v
-
-# Atau jika ada konflik dengan plugin sistem lokal:
 PYTHONPATH=. pytest -p no:launch_testing backend/tests/ -v
 ```
-Test suite mencakup:
-- Root and health check endpoint verification.
-- Static file serving endpoint test.
-- Valid image similarity check execution and schema conformance.
-- Validation for invalid file extensions (.pdf, .txt).
-- Corrupted image binary handling.
-- Enforcement of max 5 MB upload limits.
+Test suite mencakup 9 skenario:
+- Verifikasi endpoint root (`/`) dan health check (`/health`).
+- Validasi static file serving thumbnail referensi.
+- Pengujian filter kategori opsional (misal: "batik").
+- Eksekusi pengecekan gambar valid dan kesesuaian skema response.
+- **Verifikasi akurasi visual motif referensi (skor > 90% dan status 'Sangat Mirip')**.
+- Validasi penolakan format ekstensi tidak sah (.pdf, .txt).
+- Penanganan file binary gambar yang rusak/korup.
+- Penegakan batas maksimal ukuran upload 5 MB.
