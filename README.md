@@ -91,6 +91,7 @@ visual-ip-checker/
 ├── .gitignore                         # Git ignore root
 ├── ARCHITECTURE.md                    # Dokumen Arsitektur Sistem
 ├── KNOWLEDGE_BASE.md                  # [KNOWLEDGE_BASE.md](KNOWLEDGE_BASE.md) - Single Source of Truth & Knowledge Base Proyek
+├── LICENSE                            # Lisensi Open Source (MIT)
 ├── PRD.md                             # [PRD.md](PRD.md) - Dokumen Product Requirement Document
 └── README.md                          # Dokumentasi utama proyek ini
 ```
@@ -235,3 +236,9 @@ Proyek ini telah dilengkapi dengan GitHub Actions yang otomatis berjalan ketika 
 - 🧠 [**KNOWLEDGE_BASE.md**](KNOWLEDGE_BASE.md) — Knowledge Base teknis komprehensif (*Single Source of Truth*: arsitektur, algoritma CLIP & FAISS, pipeline data, dan runbook operasional).
 - 📄 [**PRD.md**](PRD.md) — Product Requirement Document (spesifikasi fungsional, persona Datik Batik, & token desain UI/UX).
 - 🏗️ [**ARCHITECTURE.md**](ARCHITECTURE.md) — Dokumen arsitektur teknis sistem dan integrasi service.
+
+---
+
+## 📄 Lisensi
+
+Proyek ini dilisensikan di bawah lisensi MIT — lihat berkas [LICENSE](LICENSE) untuk detail lengkap.
